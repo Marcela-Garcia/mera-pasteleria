@@ -833,6 +833,14 @@
       .towns li span { display: none; }
     }
     @media (max-width: 680px) {
+      .foot { position: relative; padding-top: 5.6rem; }
+      footer img {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        margin: 0;
+      }
       .cards, .video-duo, .posters, .quotes, .carta { grid-template-columns: 1fr; }
       .donut-row { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
