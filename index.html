@@ -343,20 +343,18 @@
     .story {
       background: var(--choco-2);
       color: #F8F3EA;
-      padding: 4.5rem 0;
+      padding: 3rem 0;
+      text-align: center;
     }
     .story-grid {
-      width: min(1140px, calc(100% - 8vw));
+      width: min(760px, calc(100% - 8vw));
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 2.5rem;
+      display: flex;
+      flex-direction: column;
       align-items: center;
+      gap: 1.1rem;
     }
-    .story h2, .story .eyebrow { color: #F8F3EA; }
-    .story .eyebrow { color: #E7C9A8; }
-    .story p { color: rgba(248,243,234,.82); font-size: 1.12rem; }
-    .story q { font-family: var(--display); font-style: italic; font-size: 1.45rem; line-height: 1.25; color: white; display: block; margin: 0 0 1rem; }
+    .story h2 { color: #F8F3EA; margin: 0; }
     .video-frame {
       background: #140e0c;
       border-radius: 22px;
@@ -914,14 +912,9 @@
 
     <section class="story" id="historia">
       <div class="story-grid">
-        <div>
-          <p class="eyebrow">Desde 2010</p>
-          <h2>Una pastelería que se hace con ganas</h2>
-          <q>Mirá cómo trabajamos cada detalle para que tu evento sea inolvidable.</q>
-          <p>En este video te contamos quiénes somos: Mera Pastelería Casera, elaborando desde 2010 con la prioridad de brindar productos ricos, frescos y hechos con cuidado.</p>
-        </div>
+        <h2>Nuestra historia</h2>
         <div class="video-frame">
-          <video controls playsinline preload="metadata" poster="media/poster-historia.jpg" title="Presentación de Mera Pastelería Casera desde 2010">
+          <video controls playsinline preload="metadata" poster="media/poster-historia.jpg" title="Nuestra historia">
             <source src="media/video-historia.mp4" type="video/mp4">
           </video>
         </div>
