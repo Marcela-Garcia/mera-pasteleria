@@ -279,6 +279,7 @@
       height: 100%;
       object-fit: cover;
       object-position: center 40%;
+      animation: drift 18s ease-in-out infinite alternate;
     }
     .polaroid {
       position: absolute;
@@ -290,6 +291,7 @@
       box-shadow: var(--shadow);
       transform: rotate(-7deg);
       z-index: 2;
+      animation: tilt 5.6s ease-in-out infinite;
     }
     .polaroid img { display: block; width: 100%; height: 180px; object-fit: cover; }
     .polaroid span {
@@ -725,12 +727,58 @@
     .reveal.d2 { animation-delay: .12s; }
     .reveal.d3 { animation-delay: .22s; }
     @keyframes rise { to { opacity: 1; transform: none; } }
+    .occasions li { animation: chip .55s cubic-bezier(.16, 1, .3, 1) both; }
+    .occasions li:nth-child(1) { animation-delay: .42s; }
+    .occasions li:nth-child(2) { animation-delay: .5s; }
+    .occasions li:nth-child(3) { animation-delay: .58s; }
+    .occasions li:nth-child(4) { animation-delay: .66s; }
+    .occasions li:nth-child(5) { animation-delay: .74s; }
+    .occasions li:nth-child(6) { animation-delay: .82s; }
+    @keyframes chip {
+      from { opacity: 0; transform: translateY(12px) scale(.86); }
+      to { opacity: 1; transform: none; }
+    }
+    @keyframes drift {
+      from { transform: scale(1); }
+      to { transform: scale(1.045); }
+    }
+    @keyframes tilt {
+      0%, 100% { transform: rotate(-7deg) translateY(0); }
+      50% { transform: rotate(-3.5deg) translateY(-8px); }
+    }
+    @keyframes sway {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    @keyframes draw {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
     .appear {
       opacity: 0;
-      transform: translateY(28px);
-      transition: opacity .7s ease, transform .75s cubic-bezier(.22, .8, .28, 1);
+      transform: translateY(42px) scale(.97);
+      transition: opacity .75s ease, transform .9s cubic-bezier(.16, 1, .3, 1), box-shadow .35s ease;
     }
+    .appear.side-l { transform: translateX(-56px); }
+    .appear.side-r { transform: translateX(56px); }
+    .appear.pop { transform: translateY(26px) scale(.9); }
     .appear.in { opacity: 1; transform: none; }
+    h2.appear.in::after {
+      content: "";
+      display: block;
+      width: 3.4rem;
+      height: 3px;
+      margin-top: .55rem;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--sage), #E7A3B0);
+      transform-origin: left center;
+      animation: draw .7s cubic-bezier(.16, 1, .3, 1) both;
+    }
+    .stack.in .a { animation: sway 7s ease-in-out infinite; }
+    .stack.in .b { animation: sway 6.2s ease-in-out -2s infinite; }
+    .stack.in .c { animation: sway 8s ease-in-out -3.4s infinite; }
+    .card.appear.in:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(90,58,46,.12); }
+    .filters button.appear.in:hover { transform: translateY(-2px); }
 
     @media (max-width: 980px) {
       .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
@@ -797,6 +845,9 @@
       .posters img, .carta-frame img, .donut-row img { height: 210px; }
       .carta-frame img { height: 240px; }
       h1 { max-width: none; font-size: 1.85rem; }
+      .appear { transform: translateY(24px) scale(.98); }
+      .appear.side-l, .appear.side-r { transform: translateY(22px); }
+      .appear.pop { transform: translateY(16px) scale(.94); }
       .hero-logo { height: 96px; }
       .stack { height: 260px; }
       .card img { height: 150px; }
@@ -1243,14 +1294,15 @@
     }, { passive: true });
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let watchShots = function () {};
     if (!reduce && "IntersectionObserver" in window) {
       const pieces = document.querySelectorAll([
         ".hero-photo",
         "#nosotras .about > *",
         "#historia .story-grid > *",
         "#donitas .donitas-head > *",
-        "#donitas .flavors",
-        "#donitas .formats",
+        "#donitas .flavors li",
+        "#donitas .formats li",
         "#donitas .video-frame",
         "#donitas .donut-row > *",
         "#donitas .posters > *",
@@ -1262,15 +1314,14 @@
         "#galeria .eyebrow",
         "#galeria h2",
         "#galeria .intro",
-        "#galeria .filters",
-        "#galeria .gallery",
+        "#galeria .filters button",
         "#testimonios .eyebrow",
         "#testimonios h2",
         "#testimonios .quote",
         "#zona .eyebrow",
         "#zona h2",
         "#zona .intro",
-        "#zona .towns",
+        "#zona .towns li",
         "#instagram .eyebrow",
         "#instagram h2",
         "#instagram .intro",
@@ -1282,22 +1333,52 @@
         ".finale .content > *",
         "footer .foot"
       ].join(","));
+      const onScreen = (el) => {
+        const box = el.getBoundingClientRect();
+        const viewH = window.innerHeight || document.documentElement.clientHeight;
+        return box.height > 0 && box.top < viewH * 0.92 && box.bottom > 0;
+      };
       const io = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
           entry.target.classList.add("in");
           io.unobserve(entry.target);
         });
-      }, { threshold: 0.01, rootMargin: "0px 0px -6% 0px" });
-      const viewH = window.innerHeight || document.documentElement.clientHeight;
+      }, { threshold: 0.01, rootMargin: "0px 0px -4% 0px" });
+      const shotIO = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("in");
+          shotIO.unobserve(entry.target);
+        });
+      }, { threshold: 0.01, rootMargin: "0px 0px -4% 0px" });
+      function prep(el, order) {
+        el.classList.add("appear");
+        if (el.matches(".card, .quote, .filters button, .towns li, .flavors li, .formats li, .ig-grid > *, .donut-row > *, .posters > *, .shot, .mascot")) el.classList.add("pop");
+        else if (el.matches(".hero-photo, .stack, .video-frame, .carta, #nosotras .about > :last-child, #historia .story-grid > :last-child, #contacto .contact-grid > :last-child, #donitas .donitas-head > :last-child")) el.classList.add("side-r");
+        else if (el.matches("#nosotras .about > :first-child, #historia .story-grid > :first-child, #contacto .contact-grid > :first-child, #donitas .donitas-head > :first-child")) el.classList.add("side-l");
+        el.style.transitionDelay = Math.min(Math.max(order, 0), 6) * 80 + "ms";
+      }
       pieces.forEach((el) => {
         const order = [...el.parentElement.children].indexOf(el);
-        el.classList.add("appear");
-        el.style.transitionDelay = Math.min(Math.max(order, 0), 4) * 70 + "ms";
-        const box = el.getBoundingClientRect();
-        if (box.height > 0 && box.top < viewH * 0.9 && box.bottom > 0) el.classList.add("in");
+        prep(el, order);
+        if (onScreen(el)) el.classList.add("in");
         else io.observe(el);
       });
+      watchShots = function () {
+        let n = 0;
+        document.querySelectorAll("#gallery .shot").forEach((shot) => {
+          shotIO.unobserve(shot);
+          shot.classList.remove("in");
+          prep(shot, 0);
+          if (shot.classList.contains("gone")) return;
+          shot.style.transitionDelay = Math.min(n, 7) * 55 + "ms";
+          n += 1;
+          if (onScreen(shot)) {
+            requestAnimationFrame(() => shot.classList.add("in"));
+          } else shotIO.observe(shot);
+        });
+      };
     }
     const finaleImg = document.querySelector(".finale img.bg");
     if (!reduce) {
@@ -1315,6 +1396,7 @@
         const cats = shot.dataset.cat.split(" ");
         shot.classList.toggle("gone", !cats.includes(filter));
       });
+      watchShots();
     }
     document.querySelectorAll(".filters button").forEach((btn) => {
       btn.addEventListener("click", () => showCategory(btn.dataset.filter));
