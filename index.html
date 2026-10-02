@@ -419,7 +419,7 @@
     .video-note { margin: .35rem 0 0; font-size: .85rem; color: var(--muted); }
     .donut-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(0, 480px);
       gap: .8rem;
       margin-top: 1rem;
     }
@@ -828,7 +828,7 @@
       .section h2 { font-size: 2rem; }
       .intro { margin-bottom: 1.1rem; }
       .stack { height: 420px; }
-      .video-duo, .donut-row, .posters, .cards { grid-template-columns: 1fr 1fr; }
+      .video-duo, .posters, .cards { grid-template-columns: 1fr 1fr; }
       .ig-grid { grid-template-columns: 1fr 1fr; }
       .donitas-head { justify-items: start; }
       .wa-float { right: 14px; bottom: 14px; padding: .7rem .85rem .7rem .7rem; }
@@ -849,7 +849,8 @@
       .towns li span { display: none; }
     }
     @media (max-width: 680px) {
-      .cards, .video-duo, .donut-row, .posters, .quotes, .carta { grid-template-columns: 1fr; }
+      .cards, .video-duo, .posters, .quotes, .carta { grid-template-columns: 1fr; }
+      .donut-row { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       #contacto .form-row { grid-template-columns: 1fr 1fr; }
       .gallery { columns: 2 140px; }
@@ -1001,9 +1002,6 @@
         </div>
 
         <div class="donut-row">
-          <button class="zoom" type="button" data-group="donitas" data-full="media/donas-rejilla.jpg" data-cap="Donas recién glaseadas">
-            <img src="media/donas-rejilla.jpg" alt="Bandeja de donas glaseadas de colores">
-          </button>
           <button class="zoom" type="button" data-group="donitas" data-full="media/donitas-caja.jpg" data-cap="Caja de donitas surtidas">
             <img src="media/donitas-caja.jpg" alt="Caja de donitas surtidas de Mera">
           </button>
@@ -1108,7 +1106,6 @@
           <button class="shot zoom" type="button" data-group="galeria" data-cat="postres" data-full="media/mousse.jpg" data-cap="Mousse de chocolate"><img loading="lazy" src="media/mousse.jpg" alt="Copa de mousse de chocolate con crema"><span>Mousse de chocolate</span></button>
           <button class="shot zoom" type="button" data-group="galeria" data-cat="tortas" data-full="media/torta-durazno.jpg" data-cap="Torta decorada"><img loading="lazy" src="media/torta-durazno.jpg" alt="Torta con rosetas, durazno y hilos de chocolate"><span>Torta decorada</span></button>
           <button class="shot zoom" type="button" data-group="galeria" data-cat="postres eventos" data-full="media/brownie-bocados.jpg" data-cap="Cuadraditos para la mesa"><img loading="lazy" src="media/brownie-bocados.jpg" alt="Cuadraditos de brownie con crema y dulce"><span>Cuadraditos</span></button>
-          <button class="shot zoom" type="button" data-group="galeria" data-cat="donitas" data-full="media/donas-rejilla.jpg" data-cap="Donas recién glaseadas"><img loading="lazy" src="media/donas-rejilla.jpg" alt="Donas de distintos glaseados sobre una rejilla"><span>Recién glaseadas</span></button>
           <button class="shot zoom" type="button" data-group="galeria" data-cat="postres" data-full="media/vasitos-limon.jpg" data-cap="Vasitos de limón"><img loading="lazy" src="media/vasitos-limon.jpg" alt="Vasitos de limón con merengue"><span>Vasitos de limón</span></button>
           <button class="shot zoom" type="button" data-group="galeria" data-cat="tortas" data-full="media/torta-chocolate.jpg" data-cap="Torta de chocolate"><img loading="lazy" src="media/torta-chocolate.jpg" alt="Torta rectangular de chocolate"><span>Torta de chocolate</span></button>
           <button class="shot zoom" type="button" data-group="galeria" data-cat="postres" data-full="media/vasitos-corazon.jpg" data-cap="Vasitos con corazón"><img loading="lazy" src="media/vasitos-corazon.jpg" alt="Vasitos con corazón de chocolate"><span>Corazones de chocolate</span></button>
