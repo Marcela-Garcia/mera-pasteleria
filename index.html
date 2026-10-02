@@ -455,49 +455,7 @@
     .carta-frame img { width: 100%; height: 360px; object-fit: cover; object-position: top; display: block; border-radius: 18px; transition: transform .55s ease; }
     .carta h3 { margin-top: 0; font-size: 2rem; }
 
-    .filters { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 0; }
-    .gal-panel[hidden] { display: none; }
-    .gal-panel {
-      position: fixed;
-      inset: 0;
-      z-index: 60;
-    }
-    .gal-backdrop {
-      position: absolute;
-      inset: 0;
-      background: rgba(28, 16, 12, .82);
-    }
-    .gal-sheet {
-      position: relative;
-      z-index: 1;
-      width: min(1080px, calc(100% - 1.4rem));
-      max-height: 90vh;
-      margin: 5vh auto 0;
-      overflow: auto;
-      padding: .2rem .2rem 1.4rem;
-    }
-    .gal-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 2;
-      padding: .35rem .2rem .8rem;
-    }
-    .gal-top h3 { margin: 0; color: #fff; font-size: 1.8rem; }
-    .gal-close {
-      border: 0;
-      background: rgba(255,255,255,.16);
-      color: white;
-      min-height: 42px;
-      padding: 0 1rem;
-      border-radius: 999px;
-      cursor: pointer;
-      font-weight: 600;
-    }
-    .gal-sheet .gallery { columns: 3 180px; }
+    .filters { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1.1rem; }
     .filters button {
       border: 1px solid var(--line);
       background: white;
@@ -797,7 +755,6 @@
         font-size: .82rem;
       }
       .towns li span { display: none; }
-      .gal-sheet .gallery { columns: 2 130px; }
     }
     @media (max-width: 680px) {
       .cards, .video-duo, .donut-row, .posters, .quotes, .form-row, .carta { grid-template-columns: 1fr; }
@@ -1042,23 +999,13 @@
       <div class="wrap">
         <p class="eyebrow">Galería</p>
         <h2>Lo que sale de la cocina</h2>
-        <p class="intro">Fotos reales de tortas, donitas, postres y mesas. Elegí una categoría y se abren ahí mismo.</p>
+        <p class="intro">Fotos reales de tortas, donitas, postres y mesas. Elegí una categoría y se ven acá mismo.</p>
         <div class="filters" role="toolbar" aria-label="Filtrar galería">
-          <button type="button" data-filter="tortas" aria-pressed="false">Tortas</button>
+          <button type="button" data-filter="tortas" aria-pressed="true">Tortas</button>
           <button type="button" data-filter="donitas" aria-pressed="false">Donitas</button>
           <button type="button" data-filter="postres" aria-pressed="false">Postres</button>
           <button type="button" data-filter="eventos" aria-pressed="false">Eventos</button>
           <button type="button" data-filter="cupcakes" aria-pressed="false">Cupcakes</button>
-        </div>
-      </div>
-    </section>
-
-    <div class="gal-panel" id="gal-panel" hidden>
-      <div class="gal-backdrop" data-gal-close></div>
-      <div class="gal-sheet" role="dialog" aria-modal="true" aria-labelledby="gal-title">
-        <div class="gal-top">
-          <h3 id="gal-title">Tortas</h3>
-          <button class="gal-close" type="button" data-gal-close>Cerrar</button>
         </div>
         <div class="gallery" id="gallery">
           <button class="shot zoom" type="button" data-group="galeria" data-cat="donitas" data-full="media/donas-vuelo.jpg" data-cap="Mini donitas surtidas"><img loading="lazy" src="media/donas-vuelo.jpg" alt="Mini donitas artesanales volando sobre un vaso"><span>Mini donitas surtidas</span></button>
@@ -1085,7 +1032,7 @@
           <button class="shot zoom" type="button" data-group="galeria" data-cat="postres" data-full="media/brownie-hilos.jpg" data-cap="Brownie bañado"><img loading="lazy" src="media/brownie-hilos.jpg" alt="Brownie bañado en chocolate"><span>Brownie bañado</span></button>
         </div>
       </div>
-    </div>
+    </section>
 
     <section class="section" id="testimonios" style="padding-top:1rem">
       <div class="wrap">
@@ -1271,30 +1218,17 @@
       }, { passive: true });
     }
 
-    const galPanel = document.getElementById("gal-panel");
-    const galTitle = document.getElementById("gal-title");
-    const galNames = { tortas: "Tortas", donitas: "Donitas", postres: "Postres", eventos: "Eventos", cupcakes: "Cupcakes" };
-    function closeGallery() {
-      galPanel.hidden = true;
-      if (lb.hidden) document.body.classList.remove("lock");
+    function showCategory(filter) {
+      document.querySelectorAll(".filters button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.filter === filter)));
+      document.querySelectorAll("#gallery .shot").forEach((shot) => {
+        const cats = shot.dataset.cat.split(" ");
+        shot.classList.toggle("gone", !cats.includes(filter));
+      });
     }
     document.querySelectorAll(".filters button").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const filter = btn.dataset.filter;
-        document.querySelectorAll(".filters button").forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
-        document.querySelectorAll(".shot").forEach((shot) => {
-          const cats = shot.dataset.cat.split(" ");
-          shot.classList.toggle("gone", !cats.includes(filter));
-        });
-        galTitle.textContent = galNames[filter] || "Fotos";
-        galPanel.hidden = false;
-        document.body.classList.add("lock");
-        galPanel.querySelector(".gal-sheet").scrollTop = 0;
-      });
+      btn.addEventListener("click", () => showCategory(btn.dataset.filter));
     });
-    galPanel.addEventListener("click", (e) => {
-      if (e.target.closest("[data-gal-close]")) closeGallery();
-    });
+    showCategory("tortas");
 
     const lb = document.querySelector(".lightbox");
     const lbImg = lb.querySelector("img");
@@ -1329,19 +1263,14 @@
     lb.addEventListener("click", (e) => {
       if (e.target.closest("[data-close]")) {
         lb.hidden = true;
-        if (galPanel.hidden) document.body.classList.remove("lock");
+        document.body.classList.remove("lock");
       }
       if (e.target.closest(".prev")) step(-1);
       if (e.target.closest(".next")) step(1);
     });
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && !lb.hidden) {
-        lb.hidden = true;
-        if (galPanel.hidden) document.body.classList.remove("lock");
-        return;
-      }
-      if (e.key === "Escape" && !galPanel.hidden) { closeGallery(); return; }
       if (lb.hidden) return;
+      if (e.key === "Escape") { lb.hidden = true; document.body.classList.remove("lock"); }
       if (e.key === "ArrowRight") step(1);
       if (e.key === "ArrowLeft") step(-1);
     });
