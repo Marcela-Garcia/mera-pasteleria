@@ -225,14 +225,24 @@
       position: relative;
       min-height: 520px;
       overflow: hidden;
+      background: #efe4d4;
+    }
+    .hero-photo::before {
+      content: "";
+      position: absolute;
+      inset: -24px;
+      background: url("media/torta-durazno.jpg") center/cover no-repeat;
+      filter: blur(22px);
+      transform: scale(1.05);
     }
     .hero-photo .main {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 68%;
       position: absolute;
       inset: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
     }
     .polaroid {
       position: absolute;
@@ -720,8 +730,9 @@
       .nav-links a { padding: .75rem .2rem; }
       .header .btn { width: 100%; }
       .hero, .about, .story-grid, .contact-grid, .quotes, .carta, .donitas-head { grid-template-columns: 1fr; }
-      .hero-photo { min-height: 68vw; }
-      .hero-photo .main { position: relative; height: 68vw; }
+      .hero-photo { min-height: 0; }
+      .hero-photo::before { display: none; }
+      .hero-photo .main { position: relative; height: auto; max-height: 78vh; }
       .polaroid { left: 16px; bottom: 16px; }
       .stack { height: 420px; }
       .video-duo, .donut-row, .posters, .cards { grid-template-columns: 1fr 1fr; }
@@ -1193,12 +1204,9 @@
     }, { passive: true });
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const heroImg = document.querySelector(".hero-photo .main");
     const finaleImg = document.querySelector(".finale img.bg");
     if (!reduce) {
       window.addEventListener("scroll", () => {
-        const y = window.scrollY;
-        if (y < window.innerHeight * 1.2) heroImg.style.transform = "scale(1.08) translateY(" + (y * 0.18) + "px)";
         const rect = finaleImg.parentElement.getBoundingClientRect();
         if (rect.top < window.innerHeight && rect.bottom > 0) {
           finaleImg.style.transform = "translateY(" + (rect.top * -0.12) + "px)";
