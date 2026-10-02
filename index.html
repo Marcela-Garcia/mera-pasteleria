@@ -567,8 +567,8 @@
       font-weight: 600;
     }
 
-    .contact-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 1.2rem; align-items: start; }
-    form, .info-card {
+    .contact-grid { max-width: 720px; }
+    form {
       background: white;
       border-radius: 28px;
       padding: 1.4rem;
@@ -587,32 +587,6 @@
     textarea { min-height: 110px; resize: vertical; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; }
     .hint { color: var(--muted); font-size: .85rem; }
-    .info-card h3 {
-      margin: 0 0 .4rem;
-      color: #3E2720;
-      font-size: 2.2rem;
-    }
-    .info-card .who {
-      margin: 0;
-      color: #5A3A2E;
-      font-size: 1.12rem;
-      line-height: 1.5;
-      font-weight: 500;
-    }
-    .info-card .who strong {
-      display: block;
-      margin-bottom: .15rem;
-      color: #3E2720;
-      font-family: var(--display);
-      font-size: 1.45rem;
-      font-weight: 560;
-    }
-    .channels { display: flex; flex-direction: column; gap: .65rem; margin-top: 1.15rem; }
-    .info-card .channels .btn { width: 100%; color: #fff; }
-    .info-card .btn-call { background: #5A3A2E; color: #F8F3EA; }
-    .info-card .btn-call:hover { background: #3E2720; }
-    .info-card .btn-ig { background: #C45C70; color: #fff; }
-    .info-card .btn-ig:hover { background: #A8485B; }
 
     .finale {
       position: relative;
@@ -810,20 +784,14 @@
       #contacto h2 { font-size: 1.7rem; margin-bottom: .25rem; }
       #contacto h2.appear.in::after { margin-top: .35rem; }
       #contacto .intro { font-size: .88rem; margin-bottom: .65rem; line-height: 1.35; }
-      #contacto form, #contacto .info-card { padding: .8rem .85rem; border-radius: 18px; }
+      #contacto form { padding: .8rem .85rem; border-radius: 18px; }
       #contacto label { margin: .35rem 0 .12rem; font-size: .76rem; }
       #contacto input, #contacto select, #contacto textarea { padding: .5rem .65rem; border-radius: 10px; }
       #contacto textarea { min-height: 64px; }
       #contacto .form-row { gap: .4rem; }
       #contacto .btn, #contacto .btn-lg { min-height: 42px; padding: .5rem .75rem; font-size: .9rem; }
       #contacto .hint { margin: .3rem 0 0; font-size: .76rem; }
-      #contacto .info-card h3 { font-size: 1.35rem; margin-bottom: .2rem; }
-      #contacto .info-card .who { font-size: .9rem; line-height: 1.35; }
-      #contacto .info-card .who strong { font-size: 1.08rem; }
       #contacto form > p { margin: .55rem 0 0; }
-      #contacto .channels { display: grid; grid-template-columns: 1fr 1fr; gap: .35rem; margin-top: .55rem; }
-      #contacto .channels .btn { width: 100%; }
-      #contacto .channels .btn-wa { grid-column: 1 / -1; }
       .section h2 { font-size: 2rem; }
       .intro { margin-bottom: 1.1rem; }
       .stack { height: 420px; }
@@ -1271,15 +1239,6 @@
             <p style="margin-top:1rem"><button class="btn btn-wa btn-lg" type="submit">Enviar por WhatsApp</button></p>
             <p class="hint">También podés llamar al <a href="tel:+541157079446">011 5707-9446</a>.</p>
           </form>
-          <aside class="info-card">
-            <h3>Hablemos</h3>
-            <p class="who"><strong>Rossana Margagliotti</strong>Mera Pastelería Casera<br>Mar de Ajó, Partido de La Costa</p>
-            <div class="channels">
-              <a class="btn btn-wa" href="https://wa.me/541157079446?text=Hola%20Rossana.%20Vi%20la%20p%C3%A1gina%20de%20Mera%20Pasteler%C3%ADa%20Casera%20y%20quisiera%20solicitar%20un%20presupuesto.">WhatsApp 011 5707-9446</a>
-              <a class="btn btn-call" href="tel:+541157079446">Llamar</a>
-              <a class="btn btn-ig" href="https://www.instagram.com/merapasteleriacasera/" target="_blank" rel="noopener">@merapasteleriacasera</a>
-            </div>
-          </aside>
         </div>
       </div>
     </section>
