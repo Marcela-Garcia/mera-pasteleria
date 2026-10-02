@@ -281,29 +281,6 @@
       object-position: center 40%;
       animation: drift 18s ease-in-out infinite alternate;
     }
-    .polaroid {
-      position: absolute;
-      left: 20px;
-      bottom: 24px;
-      width: min(220px, 42vw);
-      background: white;
-      padding: 10px 10px 32px;
-      box-shadow: var(--shadow);
-      transform: rotate(-7deg);
-      z-index: 2;
-      animation: tilt 5.6s ease-in-out infinite;
-    }
-    .polaroid img { display: block; width: 100%; height: 180px; object-fit: cover; }
-    .polaroid span {
-      position: absolute;
-      left: 0; right: 0; bottom: 8px;
-      text-align: center;
-      font-family: var(--display);
-      font-style: italic;
-      color: var(--choco);
-      font-size: .95rem;
-    }
-
     .marquee {
       overflow: hidden;
       background: var(--sage-deep);
@@ -742,10 +719,6 @@
       from { transform: scale(1); }
       to { transform: scale(1.045); }
     }
-    @keyframes tilt {
-      0%, 100% { transform: rotate(-7deg) translateY(0); }
-      50% { transform: rotate(-3.5deg) translateY(-8px); }
-    }
     @keyframes sway {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-12px); }
@@ -816,10 +789,25 @@
       .hero-photo { min-height: 0; }
       .hero-photo::before { display: none; }
       .hero-photo .main { position: relative; height: auto; max-height: 42vh; }
-      .polaroid { left: 12px; bottom: 12px; width: 112px; padding: 6px 6px 20px; }
-      .polaroid img { height: 72px; }
-      .polaroid span { font-size: .72rem; bottom: 3px; }
       .section { padding: 2.8rem 0; }
+      #contacto { padding-top: 1.2rem; padding-bottom: 1.2rem; }
+      #contacto h2 { font-size: 1.7rem; margin-bottom: .25rem; }
+      #contacto h2.appear.in::after { margin-top: .35rem; }
+      #contacto .intro { font-size: .88rem; margin-bottom: .65rem; line-height: 1.35; }
+      #contacto form, #contacto .info-card { padding: .8rem .85rem; border-radius: 18px; }
+      #contacto label { margin: .35rem 0 .12rem; font-size: .76rem; }
+      #contacto input, #contacto select, #contacto textarea { padding: .5rem .65rem; border-radius: 10px; }
+      #contacto textarea { min-height: 64px; }
+      #contacto .form-row { gap: .4rem; }
+      #contacto .btn, #contacto .btn-lg { min-height: 42px; padding: .5rem .75rem; font-size: .9rem; }
+      #contacto .hint { margin: .3rem 0 0; font-size: .76rem; }
+      #contacto .info-card h3 { font-size: 1.35rem; margin-bottom: .2rem; }
+      #contacto .info-card .who { font-size: .9rem; line-height: 1.35; }
+      #contacto .info-card .who strong { font-size: 1.08rem; }
+      #contacto form > p { margin: .55rem 0 0; }
+      #contacto .channels { display: grid; grid-template-columns: 1fr 1fr; gap: .35rem; margin-top: .55rem; }
+      #contacto .channels .btn { width: 100%; }
+      #contacto .channels .btn-wa { grid-column: 1 / -1; }
       .section h2 { font-size: 2rem; }
       .intro { margin-bottom: 1.1rem; }
       .stack { height: 420px; }
@@ -840,7 +828,9 @@
       .towns li span { display: none; }
     }
     @media (max-width: 680px) {
-      .cards, .video-duo, .donut-row, .posters, .quotes, .form-row, .carta { grid-template-columns: 1fr; }
+      .cards, .video-duo, .donut-row, .posters, .quotes, .carta { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      #contacto .form-row { grid-template-columns: 1fr 1fr; }
       .gallery { columns: 2 140px; }
       .posters img, .carta-frame img, .donut-row img { height: 210px; }
       .carta-frame img { height: 240px; }
@@ -905,10 +895,6 @@
       </div>
       <div class="hero-photo">
         <img class="main" src="media/designer.jpg" alt="Mesa dulce con torta de frutas, cupcakes, vasitos y macarons">
-        <figure class="polaroid">
-          <img src="media/donas-vuelo.jpg" alt="Mini donitas artesanales con toppings de colores">
-          <span>Donitas frescas</span>
-        </figure>
       </div>
     </section>
 
