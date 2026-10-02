@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mera Pastelería Casera | Tortas, mesas dulces y donitas en Mar de Ajó</title>
+  <meta name="description" content="Mera Pastelería Casera, de Rossana Margagliotti, en Mar de Ajó. Tortas, mesas dulces, donitas y catering para cumpleaños, casamientos y eventos en el Partido de La Costa. Pedí presupuesto por WhatsApp.">
+  <meta name="theme-color" content="#F8F3EA">
+  <meta property="og:title" content="Mera Pastelería Casera">
+  <meta property="og:description" content="Transformamos momentos especiales en recuerdos dulces e inolvidables. Tortas, mesas dulces y donitas en Mar de Ajó.">
+  <meta property="og:image" content="media/torta-durazno.jpg">
+  <meta property="og:locale" content="es_AR">
+  <link rel="icon" href="media/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,520;0,9..144,650;1,9..144,520;1,9..144,640&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="media/logo.jpg">
+  <link rel="preload" as="image" href="media/torta-durazno.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "name": "Mera Pastelería Casera",
+    "description": "Pastelería casera en Mar de Ajó. Tortas, mesas dulces, donitas y catering para eventos.",
+    "founder": "Rossana Margagliotti",
+    "foundingDate": "2010",
+    "image": "media/logo.jpg",
+    "telephone": "+541157079446",
+    "url": "https://www.instagram.com/merapasteleriacasera/",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mar de Ajó",
+      "addressRegion": "Buenos Aires",
+      "addressCountry": "AR"
+    },
+    "areaServed": ["Mar de Ajó", "San Bernardo", "Costa Azul", "Lucila del Mar", "Aguas Verdes", "Costa del Este", "Pinamar", "Villa Gesell", "Partido de La Costa"],
+    "sameAs": ["https://www.instagram.com/merapasteleriacasera/"]
+  }
+  </script>
+  <style>
+    :root {
+      --sage: #8FA67A;
+      --sage-deep: #5F7A4C;
+      --sage-mist: #E7F0DE;
+      --cream: #F8F3EA;
+      --cream-2: #F1E6D6;
+      --blush: #F8D9D9;
+      --blush-2: #F4C9C9;
+      --choco: #5A3A2E;
+      --choco-2: #3E2720;
+      --ink: #3C2A24;
+      --muted: #7C655C;
+      --line: rgba(90, 58, 46, .14);
+      --white: #fff;
+      --wa: #1E9B52;
+      --shadow: 0 18px 50px rgba(90, 58, 46, .12);
+      --display: "Fraunces", Georgia, "Times New Roman", serif;
+      --sans: "Outfit", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: var(--sans);
+      font-weight: 400;
+      line-height: 1.55;
+      font-size: 1.05rem;
+    }
+    img { max-width: 100%; }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    ::selection { background: var(--blush); color: var(--choco); }
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      background: var(--choco);
+      color: white;
+      padding: .6rem 1rem;
+      z-index: 80;
+    }
+    .skip:focus { top: 1rem; }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: .45rem 4vw;
+      background: rgba(248, 243, 234, .9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid transparent;
+    }
+    .header.scrolled { border-bottom-color: var(--line); box-shadow: 0 8px 24px rgba(90,58,46,.05); }
+    .brand { display: flex; align-items: center; text-decoration: none; }
+    .brand img { height: 64px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 1.15rem; }
+    .nav-links a {
+      text-decoration: none;
+      font-size: .95rem;
+      font-weight: 500;
+      color: var(--choco);
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--sage-deep); }
+    .nav-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: white;
+      cursor: pointer;
+    }
+    .nav-toggle span, .nav-toggle span:before, .nav-toggle span:after {
+      display: block;
+      height: 2px;
+      width: 18px;
+      background: var(--choco);
+      position: relative;
+      margin: 0 auto;
+    }
+    .nav-toggle span:before, .nav-toggle span:after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+    .nav-toggle span:before { top: -6px; }
+    .nav-toggle span:after { top: 6px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      min-height: 52px;
+      padding: .85rem 1.3rem;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 0;
+      cursor: pointer;
+      font-weight: 600;
+      letter-spacing: .01em;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn svg { width: 18px; height: 18px; flex: none; }
+    .btn-wa { background: var(--wa); color: white; box-shadow: 0 12px 26px rgba(30, 155, 82, .28); }
+    .btn-wa:hover { background: #178a47; }
+    .btn-ghost { background: transparent; color: var(--choco); border: 1.5px solid rgba(90,58,46,.28); }
+    .btn-ghost:hover { background: white; }
+    .btn-choco { background: var(--choco); color: var(--cream); }
+    .btn-lg { min-height: 60px; padding: 1rem 1.6rem; font-size: 1.05rem; }
+    .header .btn { min-height: 46px; padding: .7rem 1rem; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      min-height: calc(100svh - 76px);
+      background:
+        radial-gradient(circle at 12% 80%, rgba(248, 217, 217, .85), transparent 32%),
+        radial-gradient(circle at 0% 0%, rgba(143, 166, 122, .2), transparent 28%),
+        var(--cream);
+    }
+    .hero-copy {
+      position: relative;
+      padding: 1.4rem 4vw 1.8rem 5.5vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .eyebrow {
+      margin: 0 0 .8rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      font-size: .74rem;
+      font-weight: 600;
+      color: var(--sage-deep);
+    }
+    .hero-logo {
+      width: min(360px, 92%);
+      height: 154px;
+      object-fit: cover;
+      object-position: center 46%;
+      border-radius: 18px;
+      margin: 0 0 .75rem;
+      box-shadow: 0 16px 40px rgba(90,58,46,.08);
+    }
+    h1, h2, h3 { font-family: var(--display); font-weight: 560; letter-spacing: -.02em; color: var(--choco); }
+    h1 {
+      margin: 0 0 .45rem;
+      font-size: clamp(2.15rem, 3.7vw, 3.55rem);
+      line-height: 1.02;
+      max-width: 13ch;
+    }
+    .lede {
+      margin: 0 0 .75rem;
+      max-width: 38rem;
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+    .lede em { font-family: var(--display); font-style: italic; color: var(--choco); font-size: 1.25rem; }
+    .occasions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+      margin: 0 0 1rem;
+      padding: 0;
+      list-style: none;
+    }
+    .occasions li {
+      background: rgba(255,255,255,.7);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: .35rem .75rem;
+      font-size: .88rem;
+      color: var(--choco);
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .7rem; }
+    .hero-photo {
+      position: relative;
+      min-height: 520px;
+      overflow: hidden;
+    }
+    .hero-photo .main {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 68%;
+      position: absolute;
+      inset: 0;
+    }
+    .polaroid {
+      position: absolute;
+      left: 20px;
+      bottom: 24px;
+      width: min(220px, 42vw);
+      background: white;
+      padding: 10px 10px 32px;
+      box-shadow: var(--shadow);
+      transform: rotate(-7deg);
+      z-index: 2;
+    }
+    .polaroid img { display: block; width: 100%; height: 180px; object-fit: cover; }
+    .polaroid span {
+      position: absolute;
+      left: 0; right: 0; bottom: 8px;
+      text-align: center;
+      font-family: var(--display);
+      font-style: italic;
+      color: var(--choco);
+      font-size: .95rem;
+    }
+    .since {
+      position: absolute;
+      right: 22px;
+      top: 22px;
+      background: rgba(248, 243, 234, .92);
+      color: var(--choco);
+      border-radius: 18px;
+      padding: .8rem 1rem;
+      box-shadow: var(--shadow);
+    }
+    .since strong {
+      display: block;
+      font-family: var(--display);
+      font-size: 1.7rem;
+      line-height: 1;
+    }
+    .since small { color: var(--muted); }
+
+    .marquee {
+      overflow: hidden;
+      background: var(--sage-deep);
+      color: white;
+      padding: .85rem 0;
+    }
+    .marquee-track {
+      display: flex;
+      gap: 2.2rem;
+      width: max-content;
+      animation: ticker 32s linear infinite;
+      font-weight: 500;
+    }
+    .marquee-track span { display: inline-flex; align-items: center; gap: .7rem; }
+    .marquee-track i {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--blush);
+      display: inline-block;
+    }
+    @keyframes ticker { to { transform: translateX(-50%); } }
+
+    section { scroll-margin-top: 96px; }
+    .wrap { width: min(1140px, calc(100% - 8vw)); margin: 0 auto; }
+    .section { padding: 5.2rem 0; }
+    .section h2 { font-size: clamp(2.2rem, 4vw, 3.7rem); line-height: 1.05; margin: 0 0 .8rem; }
+    .intro { max-width: 40rem; color: var(--muted); margin: 0 0 2rem; }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .about p { color: var(--muted); }
+    .about .hello {
+      font-family: var(--display);
+      font-size: clamp(1.7rem, 3vw, 2.3rem);
+      color: var(--choco);
+      line-height: 1.2;
+      margin: 0 0 1rem;
+    }
+    .stack { position: relative; height: 520px; }
+    .stack img {
+      position: absolute;
+      object-fit: cover;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      border: 6px solid white;
+    }
+    .stack .a { width: 68%; height: 72%; left: 0; top: 0; }
+    .stack .b { width: 48%; height: 42%; right: 0; bottom: 18px; }
+    .stack .c { width: 38%; height: 34%; left: 8%; bottom: 0; }
+
+    .story {
+      background: var(--choco-2);
+      color: #F8F3EA;
+      padding: 4.5rem 0;
+    }
+    .story-grid {
+      width: min(1140px, calc(100% - 8vw));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .story h2, .story .eyebrow { color: #F8F3EA; }
+    .story .eyebrow { color: #E7C9A8; }
+    .story p { color: rgba(248,243,234,.82); font-size: 1.12rem; }
+    .story q { font-family: var(--display); font-style: italic; font-size: 1.45rem; line-height: 1.25; color: white; display: block; margin: 0 0 1rem; }
+    .video-frame {
+      background: #140e0c;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,.28);
+    }
+    .video-frame video { display: block; width: 100%; height: auto; background: #000; }
+
+    .donitas {
+      background:
+        radial-gradient(circle at 8% 12%, rgba(248,217,217,.9), transparent 26%),
+        radial-gradient(circle at 92% 88%, rgba(143,166,122,.35), transparent 30%),
+        linear-gradient(180deg, #fffaf4, var(--cream));
+    }
+    .donitas-head {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1.4rem;
+      align-items: center;
+      margin-bottom: 1.8rem;
+    }
+    .mascot {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 18%;
+      border: 4px solid white;
+      box-shadow: var(--shadow);
+      background: white;
+    }
+    .flavors, .formats { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0 0; padding: 0; list-style: none; }
+    .flavors li, .formats li {
+      background: white;
+      border-radius: 999px;
+      padding: .4rem .8rem;
+      border: 1px solid var(--line);
+      font-size: .92rem;
+    }
+    .flavors li::before {
+      content: "";
+      display: inline-block;
+      width: .65rem; height: .65rem;
+      border-radius: 50%;
+      margin-right: .4rem;
+      background: var(--sage);
+      vertical-align: middle;
+    }
+    .flavors li:nth-child(2)::before { background: #C48A5A; }
+    .flavors li:nth-child(3)::before { background: #3d3d3d; }
+    .flavors li:nth-child(4)::before { background: #8B5A3C; }
+    .flavors li:nth-child(5)::before { background: #E07A93; }
+    .video-duo {
+      display: grid;
+      grid-template-columns: 1.45fr .7fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .video-duo .video-frame video { width: 100%; height: 100%; max-height: 520px; object-fit: cover; }
+    .video-duo .tall video { max-height: 520px; object-fit: cover; }
+    .video-note { margin: .35rem 0 0; font-size: .85rem; color: var(--muted); }
+    .donut-row {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      gap: .8rem;
+      margin-top: 1rem;
+    }
+    .donut-row .zoom, .posters .zoom, .carta-frame {
+      border: 0;
+      padding: 0;
+      background: transparent;
+      cursor: zoom-in;
+      border-radius: 20px;
+      overflow: hidden;
+      display: block;
+      width: 100%;
+    }
+    .donut-row img, .posters img { width: 100%; height: 280px; object-fit: cover; display: block; transition: transform .55s ease; }
+    .donut-row .zoom:hover img, .posters .zoom:hover img, .shot:hover img, .carta-frame:hover img { transform: scale(1.05); }
+    .posters { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: .8rem; margin-top: 1rem; }
+    .posters img { height: 420px; object-fit: cover; object-position: top; }
+
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .card {
+      background: white;
+      border-radius: 26px;
+      overflow: hidden;
+      border: 1px solid rgba(90,58,46,.06);
+      box-shadow: 0 10px 30px rgba(90,58,46,.05);
+      transition: transform .35s ease;
+    }
+    .card:hover { transform: translateY(-6px); }
+    .card .media { overflow: hidden; }
+    .card img { width: 100%; height: 210px; object-fit: cover; display: block; transition: transform .6s ease; }
+    .card:hover img { transform: scale(1.06); }
+    .card div { padding: 1.05rem 1.15rem 1.25rem; }
+    .card h3 { margin: 0 0 .35rem; font-size: 1.55rem; }
+    .card p { margin: 0; color: var(--muted); }
+    .carta {
+      margin-top: 1.4rem;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 1.4rem;
+      align-items: center;
+      background: white;
+      border-radius: 28px;
+      padding: 1rem;
+      border: 1px solid rgba(90,58,46,.06);
+    }
+    .carta-frame img { width: 100%; height: 360px; object-fit: cover; object-position: top; display: block; border-radius: 18px; transition: transform .55s ease; }
+    .carta h3 { margin-top: 0; font-size: 2rem; }
+
+    .filters { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1.1rem; }
+    .filters button {
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--choco);
+      border-radius: 999px;
+      min-height: 42px;
+      padding: .4rem .9rem;
+      cursor: pointer;
+    }
+    .filters button[aria-pressed="true"] { background: var(--choco); color: var(--cream); border-color: var(--choco); }
+    .gallery { columns: 3 240px; column-gap: .8rem; }
+    .shot {
+      break-inside: avoid;
+      margin: 0 0 .8rem;
+      padding: 0;
+      border: 0;
+      width: 100%;
+      display: block;
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      cursor: zoom-in;
+      background: #efe6da;
+    }
+    .shot.gone { display: none; }
+    .shot img { width: 100%; display: block; transition: transform .55s ease; }
+    .shot figcaption, .shot span {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      padding: 2rem .8rem .7rem;
+      color: white;
+      font-size: .92rem;
+      background: linear-gradient(transparent, rgba(62,39,32,.72));
+      opacity: 0;
+      transition: opacity .3s ease;
+      text-align: left;
+    }
+    .shot:hover span, .shot:focus-visible span { opacity: 1; }
+
+    .quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .quote {
+      background: white;
+      border-radius: 26px;
+      padding: 1.6rem 1.5rem 1.4rem;
+      border: 1px solid rgba(90,58,46,.06);
+      box-shadow: 0 10px 30px rgba(90,58,46,.05);
+    }
+    .stars { color: #C9892D; letter-spacing: .12em; margin-bottom: .6rem; }
+    .quote p {
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 1.55rem;
+      line-height: 1.25;
+      margin: 0 0 .8rem;
+      color: var(--choco);
+    }
+    .quote small { color: var(--muted); }
+
+    .zones { background: var(--sage-mist); }
+    .towns { display: flex; flex-wrap: wrap; gap: .55rem; padding: 0; margin: 1.2rem 0 0; list-style: none; }
+    .towns li {
+      background: white;
+      border-radius: 16px;
+      padding: .75rem 1rem;
+      min-width: 140px;
+      border: 1px solid rgba(95,122,76,.18);
+      font-weight: 500;
+      color: var(--choco);
+    }
+    .towns li span { display: block; font-weight: 400; color: var(--muted); font-size: .82rem; }
+
+    .ig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; }
+    .ig-grid a { position: relative; display: block; border-radius: 16px; overflow: hidden; }
+    .ig-grid img { width: 100%; height: 220px; object-fit: cover; display: block; transition: transform .5s ease; }
+    .ig-grid a:hover img { transform: scale(1.06); }
+    .ig-grid a::after {
+      content: "Instagram";
+      position: absolute;
+      inset: auto 10px 10px auto;
+      background: rgba(255,255,255,.92);
+      color: var(--choco);
+      border-radius: 999px;
+      padding: .25rem .6rem;
+      font-size: .78rem;
+      font-weight: 600;
+    }
+
+    .contact-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 1.2rem; align-items: start; }
+    form, .info-card {
+      background: white;
+      border-radius: 28px;
+      padding: 1.4rem;
+      border: 1px solid rgba(90,58,46,.06);
+      box-shadow: var(--shadow);
+    }
+    label { display: block; font-size: .86rem; font-weight: 600; margin: .75rem 0 .3rem; color: var(--choco); }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: var(--cream);
+      border-radius: 14px;
+      padding: .85rem 1rem;
+      color: var(--ink);
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; }
+    .hint { color: var(--muted); font-size: .85rem; }
+    .info-card h3 {
+      margin: 0 0 .4rem;
+      color: #3E2720;
+      font-size: 2.2rem;
+    }
+    .info-card .who {
+      margin: 0;
+      color: #5A3A2E;
+      font-size: 1.12rem;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+    .info-card .who strong {
+      display: block;
+      margin-bottom: .15rem;
+      color: #3E2720;
+      font-family: var(--display);
+      font-size: 1.45rem;
+      font-weight: 560;
+    }
+    .channels { display: flex; flex-direction: column; gap: .65rem; margin-top: 1.15rem; }
+    .info-card .channels .btn { width: 100%; color: #fff; }
+    .info-card .btn-call { background: #5A3A2E; color: #F8F3EA; }
+    .info-card .btn-call:hover { background: #3E2720; }
+    .info-card .btn-ig { background: #C45C70; color: #fff; }
+    .info-card .btn-ig:hover { background: #A8485B; }
+
+    .finale {
+      position: relative;
+      min-height: 78vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+    }
+    .finale img.bg {
+      position: absolute;
+      width: 100%;
+      height: 125%;
+      object-fit: cover;
+      top: -8%;
+      left: 0;
+    }
+    .finale .veil {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(62,39,32,.25), rgba(62,39,32,.78));
+    }
+    .finale .content { position: relative; z-index: 1; padding: 4rem 1.2rem; max-width: 760px; }
+    .finale h2 { color: white; font-size: clamp(2.4rem, 5vw, 4.4rem); }
+    .finale p { font-size: 1.2rem; color: rgba(255,255,255,.9); }
+
+    footer {
+      background: var(--choco-2);
+      color: rgba(248,243,234,.82);
+      padding: 2.2rem 0 1.4rem;
+    }
+    .foot {
+      width: min(1140px, calc(100% - 8vw));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    footer img { height: 72px; width: auto; border-radius: 10px; }
+    footer a { color: white; }
+
+    .wa-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 45;
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+      background: var(--wa);
+      color: white;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: .85rem 1rem .85rem .85rem;
+      box-shadow: 0 12px 30px rgba(30,155,82,.35);
+      font-weight: 600;
+    }
+    .wa-float svg { width: 26px; height: 26px; }
+    .wa-float::before {
+      content: "";
+      position: absolute;
+      inset: -6px;
+      border-radius: inherit;
+      border: 2px solid rgba(30,155,82,.45);
+      animation: pulse 2.2s ease-out infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(.92); opacity: .8; }
+      100% { transform: scale(1.12); opacity: 0; }
+    }
+    .dock { display: none; }
+
+    .lightbox[hidden] { display: none; }
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 70;
+      display: grid;
+      place-items: center;
+    }
+    .lb-backdrop { position: absolute; inset: 0; background: rgba(28, 16, 12, .88); }
+    .lightbox figure { position: relative; z-index: 1; margin: 0; max-width: min(980px, 92vw); max-height: 88vh; }
+    .lightbox img { max-width: 92vw; max-height: 78vh; object-fit: contain; border-radius: 12px; display: block; }
+    .lb-cap { color: white; text-align: center; margin-top: .6rem; }
+    .lb-x, .lb-nav {
+      position: absolute;
+      z-index: 2;
+      border: 0;
+      background: rgba(255,255,255,.14);
+      color: white;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.6rem;
+    }
+    .lb-x { top: 16px; right: 16px; }
+    .lb-nav.prev { left: 12px; top: 50%; }
+    .lb-nav.next { right: 12px; top: 50%; }
+    body.lock { overflow: hidden; }
+
+    .reveal { opacity: 0; transform: translateY(26px); animation: rise .8s ease forwards; }
+    .reveal.d2 { animation-delay: .12s; }
+    .reveal.d3 { animation-delay: .22s; }
+    @keyframes rise { to { opacity: 1; transform: none; } }
+
+    @media (max-width: 980px) {
+      .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0; right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: rgba(248,243,234,.98);
+        border-bottom: 1px solid var(--line);
+        padding: .4rem 1rem 1rem;
+      }
+      .nav-links.open {
+        display: flex;
+        background: #F8F3EA;
+        box-shadow: 0 18px 36px rgba(90, 58, 46, .12);
+      }
+      .nav-links a { padding: .75rem .2rem; }
+      .header .btn { width: 100%; }
+      .hero, .about, .story-grid, .contact-grid, .quotes, .carta, .donitas-head { grid-template-columns: 1fr; }
+      .hero-photo { min-height: 68vw; }
+      .hero-photo .main { position: relative; height: 68vw; }
+      .polaroid { left: 16px; bottom: 16px; }
+      .stack { height: 420px; }
+      .video-duo, .donut-row, .posters, .cards { grid-template-columns: 1fr 1fr; }
+      .ig-grid { grid-template-columns: 1fr 1fr; }
+      .donitas-head { justify-items: start; }
+      .wa-float { display: none; }
+      .dock {
+        display: grid;
+        grid-template-columns: .8fr 1.2fr;
+        gap: .5rem;
+        position: fixed;
+        left: 0; right: 0; bottom: 0;
+        z-index: 50;
+        background: rgba(248,243,234,.97);
+        border-top: 1px solid var(--line);
+        padding: .55rem .7rem calc(.55rem + env(safe-area-inset-bottom));
+      }
+      body { padding-bottom: 84px; }
+    }
+    @media (max-width: 680px) {
+      .cards, .video-duo, .donut-row, .posters, .quotes, .form-row, .carta { grid-template-columns: 1fr; }
+      .gallery { columns: 2 140px; }
+      .posters img, .carta-frame img, .donut-row img { height: 320px; }
+      h1 { max-width: none; }
+      .hero-copy { padding: 1.6rem 5vw 2.2rem; }
+      .since { right: 12px; top: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="header">
+    <a class="brand" href="#inicio" aria-label="Mera Pastelería Casera, inicio">
+      <img src="media/logo.jpg" alt="Mera Pastelería Casera">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Abrir menú"><span></span></button>
+    <nav class="nav-links" id="menu">
+      <a href="#nosotras">Quiénes somos</a>
+      <a href="#donitas">Donitas</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#galeria">Galería</a>
+      <a href="#contacto">Contacto</a>
+      <a class="btn btn-wa" href="https://wa.me/541157079446?text=Hola%20Rossana.%20Vi%20la%20p%C3%A1gina%20de%20Mera%20Pasteler%C3%ADa%20Casera%20y%20quisiera%20solicitar%20un%20presupuesto.">Pedir presupuesto</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow reveal">Desde 2010 · Mar de Ajó</p>
+        <img class="hero-logo reveal" src="media/logo.jpg" alt="Logo de Mera Pastelería Casera, by Rossana Margagliotti">
+        <h1 class="reveal">Mesas dulces y catering para eventos inolvidables</h1>
+        <p class="lede reveal"><em>Transformamos momentos especiales en recuerdos dulces e inolvidables.</em> Cada torta cuenta una historia y cada festejo merece algo único.</p>
+        <ul class="occasions reveal">
+          <li>Cumpleaños</li>
+          <li>Casamientos</li>
+          <li>Bautismos</li>
+          <li>Baby shower</li>
+          <li>Eventos empresariales</li>
+          <li>Reuniones familiares</li>
+        </ul>
+        <div class="hero-actions reveal">
+          <a class="btn btn-wa btn-lg" href="https://wa.me/541157079446?text=Hola%20Rossana.%20Vi%20la%20p%C3%A1gina%20de%20Mera%20Pasteler%C3%ADa%20Casera%20y%20quisiera%20solicitar%20un%20presupuesto.">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 2.1 16.7L1 23l6.5-1.1A11 11 0 0 0 20.5 3.5zm-8.5 17a9.1 9.1 0 0 1-4.6-1.3l-.3-.2-3.9.6.7-3.8-.2-.3A9.1 9.1 0 1 1 12 20.5zm5-6.8c-.3-.1-1.6-.8-1.8-.9s-.4-.1-.6.1-.7.9-.8 1-.3.2-.6.1a7.4 7.4 0 0 1-2.2-1.4 8.2 8.2 0 0 1-1.5-1.9c-.2-.3 0-.4.1-.6l.4-.5.2-.3a.5.5 0 0 0 0-.5c0-.1-.6-1.4-.8-1.9s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.8 11.8 0 0 0 4.5 4 15 15 0 0 0 1.5.5 3.6 3.6 0 0 0 1.7.1 2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.6-.3z"/></svg>
+            Pedir presupuesto
+          </a>
+          <a class="btn btn-ghost" href="https://www.instagram.com/merapasteleriacasera/" target="_blank" rel="noopener">Ver Instagram</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img class="main" src="media/torta-durazno.jpg" alt="Torta decorada con rosetas, durazno y chocolate">
+        <div class="since"><strong>2010</strong><small>Pastelería casera</small></div>
+        <figure class="polaroid">
+          <img src="media/donas-vuelo.jpg" alt="Mini donitas artesanales con toppings de colores">
+          <span>Donitas frescas</span>
+        </figure>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span><i></i>Cumpleaños</span><span><i></i>Casamientos</span><span><i></i>Bautismos</span><span><i></i>Baby shower</span><span><i></i>Eventos empresariales</span><span><i></i>Reuniones familiares</span><span><i></i>Donitas caseras</span><span><i></i>Mesas dulces</span>
+        <span><i></i>Cumpleaños</span><span><i></i>Casamientos</span><span><i></i>Bautismos</span><span><i></i>Baby shower</span><span><i></i>Eventos empresariales</span><span><i></i>Reuniones familiares</span><span><i></i>Donitas caseras</span><span><i></i>Mesas dulces</span>
+      </div>
+    </div>
+
+    <section class="section" id="nosotras">
+      <div class="wrap about">
+        <div>
+          <p class="eyebrow">Quiénes somos</p>
+          <p class="hello">Hola, soy Rossana, pastelera y creadora de Mera Pastelería Casera.</p>
+          <p>Desde Mar de Ajó elaboramos tortas, mesas dulces y catering para eventos especiales, cuidando cada detalle para que tu celebración sea única.</p>
+          <p>Somos pastelería desde el año 2010. Trabajamos con materia prima de primera calidad para lograr productos ricos y frescos, pensados para acompañarte en esos momentos de disfrute junto a los tuyos.</p>
+          <p><a class="btn btn-choco" href="#historia">Ver nuestra historia</a></p>
+        </div>
+        <div class="stack" aria-hidden="true">
+          <img class="a" src="media/mousse.jpg" alt="">
+          <img class="b" src="media/vasitos-cereza.jpg" alt="">
+          <img class="c" src="media/brownie-merengue.jpg" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section class="story" id="historia">
+      <div class="story-grid">
+        <div>
+          <p class="eyebrow">Desde 2010</p>
+          <h2>Una pastelería que se hace con ganas</h2>
+          <q>Mirá cómo trabajamos cada detalle para que tu evento sea inolvidable.</q>
+          <p>En este video te contamos quiénes somos: Mera Pastelería Casera, elaborando desde 2010 con la prioridad de brindar productos ricos, frescos y hechos con cuidado.</p>
+        </div>
+        <div class="video-frame">
+          <video controls playsinline preload="metadata" poster="media/poster-historia.jpg" title="Presentación de Mera Pastelería Casera desde 2010">
+            <source src="media/video-historia.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section class="section donitas" id="donitas">
+      <div class="wrap">
+        <div class="donitas-head">
+          <img class="mascot" src="media/mascota.jpg" alt="Ilustración de la pastelera Mera">
+          <div>
+            <p class="eyebrow">La estrella de la casa</p>
+            <h2>Donitas frescas, caseras y espectaculares</h2>
+            <p class="intro">Mini donas recién hechas, con glaseados y toppings que dan ganas de repetir. Ideales para cumpleaños, para regalar o para que desaparezcan en la mesa. Grandes sabores, pequeños placeres.</p>
+            <a class="btn btn-wa" href="https://wa.me/541157079446?text=Hola%20Rossana.%20Vi%20la%20p%C3%A1gina%20de%20Mera%20Pasteler%C3%ADa%20Casera%20y%20quisiera%20pedir%20donitas%20surtidas.">Quiero donitas por WhatsApp</a>
+          </div>
+        </div>
+
+        <ul class="flavors" aria-label="Sabores">
+          <li>Lemon pie</li>
+          <li>Chocotorta</li>
+          <li>Oreo</li>
+          <li>Café</li>
+          <li>Frutilla</li>
+          <li>Temáticas para cumpleaños</li>
+        </ul>
+        <ul class="formats" aria-label="Presentaciones">
+          <li>Caja x 8 surtidas</li>
+          <li>Pote surtido para compartir</li>
+          <li>Pack individual y en palitos</li>
+        </ul>
+
+        <div class="video-duo">
+          <div class="video-frame">
+            <video controls playsinline preload="metadata" poster="media/poster-nenes.jpg" title="Nenes disfrutando las donitas de Mera">
+              <source src="media/video-nenes.mp4" type="video/mp4">
+            </video>
+            <p class="video-note">Así se disfrutan: frescas, caseras y buenísimas.</p>
+          </div>
+          <div class="video-frame tall">
+            <video controls playsinline preload="metadata" poster="media/poster-donitas.jpg" title="Donitas surtidas de Mera Pastelería Casera">
+              <source src="media/video-donitas.mp4" type="video/mp4">
+            </video>
+            <p class="video-note">Mirá la caja de donitas surtidas.</p>
+          </div>
+        </div>
+
+        <div class="donut-row">
+          <button class="zoom" type="button" data-group="donitas" data-full="media/donas-rejilla.jpg" data-cap="Donas recién glaseadas">
+            <img src="media/donas-rejilla.jpg" alt="Bandeja de donas glaseadas de colores">
+          </button>
+          <button class="zoom" type="button" data-group="donitas" data-full="media/donitas-caja.jpg" data-cap="Caja de donitas surtidas">
+            <img src="media/donitas-caja.jpg" alt="Caja de donitas surtidas de Mera">
+          </button>
+          <button class="zoom" type="button" data-group="donitas" data-full="media/maquina-donas.jpg" data-cap="Preparación de las donitas">
+            <img src="media/maquina-donas.jpg" alt="Preparación de mini donas con glaseados">
+          </button>
+        </div>
+        <div class="posters">
+          <button class="zoom" type="button" data-group="donitas" data-full="media/poster-sabores.jpg" data-cap="Sabores y presentaciones">
+            <img src="media/poster-sabores.jpg" alt="Sabores de donitas: lemon pie, chocotorta, oreo, café y frutilla">
+          </button>
+          <button class="zoom" type="button" data-group="donitas" data-full="media/poster-donitas.jpg" data-cap="Donitas surtidas">
+            <img src="media/poster-donitas.jpg" alt="Pote y caja de donitas surtidas">
+          </button>
+          <button class="zoom" type="button" data-group="donitas" data-full="media/flyer-cumple.jpg" data-cap="Donitas temáticas para cumpleaños">
+            <img src="media/flyer-cumple.jpg" alt="Pedidos de donitas temáticas para cumpleaños">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicios">
+      <div class="wrap">
+        <p class="eyebrow">Qué hacemos</p>
+        <h2>Para cada festejo, una mesa que se recuerde</h2>
+        <p class="intro">De la torta al último vasito, armamos la parte dulce de tu evento con estética casera y presentación premium.</p>
+        <div class="cards">
+          <article class="card">
+            <div class="media"><img src="media/torta-pokemon.jpg" alt="Torta infantil temática de cumpleaños"></div>
+            <div>
+              <h3>Tortas personalizadas</h3>
+              <p>Temáticas e infantiles, y también las clásicas bien decoradas. Cada una se piensa para esa fecha.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="media"><img src="media/mesa-evento.jpg" alt="Mesa dulce servida en un evento al aire libre"></div>
+            <div>
+              <h3>Mesas dulces</h3>
+              <p>Completas para eventos: variedad, color y ese rincón que se vuelve el centro de la reunión.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="media"><img src="media/alfajores.jpg" alt="Alfajores decorados con grana de colores"></div>
+            <div>
+              <h3>Cupcakes y cake pops</h3>
+              <p>Diseños personalizados, lindos para mirar y mejores para comer. También alfajores y bocaditos.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="media"><img src="media/vasitos-corazon.jpg" alt="Vasitos dulces con corazón de chocolate"></div>
+            <div>
+              <h3>Postres y vasitos</h3>
+              <p>Mousses, copas, brownies y cuadraditos con una presentación que se luce en la mesa.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="media"><img src="media/brownie-bocados.jpg" alt="Cuadraditos de brownie para una mesa dulce"></div>
+            <div>
+              <h3>Catering para eventos</h3>
+              <p>Cumpleaños, bautismos, baby shower, empresas y reuniones familiares. Todo el dulce, resuelto.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="media"><img src="media/torta-chocolate.jpg" alt="Torta de chocolate con picos y corazones"></div>
+            <div>
+              <h3>Casamientos</h3>
+              <p>Candy bar y mesas dulces para el día más lindo, con una estética delicada y abundante.</p>
+            </div>
+          </article>
+        </div>
+        <div class="carta">
+          <button class="carta-frame zoom" type="button" data-group="carta" data-full="media/flyer-catering.jpg" data-cap="Servicio de catering y mesas dulces">
+            <img src="media/flyer-catering.jpg" alt="Folleto de servicio de catering de Mera Pastelería Casera en Mar de Ajó">
+          </button>
+          <div>
+            <p class="eyebrow">La carta</p>
+            <h3>Tortas, vasitos, cupcakes, cake pops y donitas</h3>
+            <p>En el folleto está el mapa de lo que podemos armar para tu evento. Tocá la imagen para verla completa y, si ya sabés la fecha, pedí el presupuesto.</p>
+            <p><a class="btn btn-wa" href="https://wa.me/541157079446?text=Hola%20Rossana.%20Vi%20la%20p%C3%A1gina%20de%20Mera%20Pasteler%C3%ADa%20Casera%20y%20quisiera%20solicitar%20un%20presupuesto.">Pedir presupuesto</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="galeria" style="padding-top:0">
+      <div class="wrap">
+        <p class="eyebrow">Galería</p>
+        <h2>Lo que sale de la cocina</h2>
+        <p class="intro">Fotos reales de tortas, donitas, postres y mesas. Tocá una imagen para verla en grande.</p>
+        <div class="filters" role="toolbar" aria-label="Filtrar galería">
+          <button type="button" data-filter="todas" aria-pressed="true">Todas</button>
+          <button type="button" data-filter="tortas" aria-pressed="false">Tortas</button>
+          <button type="button" data-filter="donitas" aria-pressed="false">Donitas</button>
+          <button type="button" data-filter="postres" aria-pressed="false">Postres</button>
+          <button type="button" data-filter="eventos" aria-pressed="false">Eventos</button>
+          <button type="button" data-filter="cupcakes" aria-pressed="false">Cupcakes</button>
+        </div>
+        <div class="gallery" id="gallery">
+          <button class="shot zoom" type="button" data-group="galeria" data-cat="donitas" data-full="media/donas-vuelo.jpg" data-cap="Mini donitas surtidas"><img loading="lazy" src="media/donas-vuelo.jpg" alt="Mini donitas artesanales volando sobre un vaso"><span>Mini donitas surtidas</span></button>
+          <button class="shot zoom" type="button" data-group="galeria" data-cat="tortas" data-full="media/torta-malvavisco.jpg" data-cap="Torta de malvaviscos"><img loading="lazy" src="media/torta-malvavisco.jpg" alt="Torta cubierta de malvaviscos de colores"><span>Torta de malvaviscos</span></button>
+          <button class="shot zoom" type="button" data-group="galeria" data-cat="postres eventos" data-full="media/vasitos-rosa.jpg" data-cap="Copas con crema"><img loading="lazy" src="media/vasitos-rosa.jpg" alt="Vasitos dulces coronados con crema"><span>Copas con crema</span></button>
+          <button class="shot zoom" type="button" data-group="galeria" data-cat="tortas" data-full="media/torta-pokemon.jpg" data-cap="Torta infantil temática"><img loading="lazy" src="media/torta-pokemon.jpg" alt="Torta de cumpleaños infantil temática"><span>Torta infantil</span></button>
+          <button class="shot zoom" type="button" data-group="galeria" data-cat="postres" data-full="media/brownie-macro.jpg" data-cap="Brownie casero"><img loading="lazy" src="media/brownie-macro.jpg" alt="Detalle de brownie con chocolate"><span>Brownie casero</span></button>
+          <button class="shot zoom" type="button" data-group="galeria" data-cat="eventos" data-full="media/mesa-evento.jpg" data-cap="Mesa dulce al aire libre"><img loading="lazy" src="media/mesa-evento.jpg" alt="Mesa dulce servida en un evento"><span>Mesa dulce</span></button>
+          <button class="shot zoom" type="button" data-group="galeria" data-cat="postres" data-full="media/vasitos-cereza.jpg" data-cap="Vasitos de frutos rojos"><img loading="lazy" src="media/vasitos-cereza.jpg" alt="Vasitos con crema, cereza y chocolate"><span>Vasitos de frutos rojos</span></button>
+          <button class="shot zoom" type="button" data-group="galeria" data-cat="postres" data-full="media/mousse.jpg" data-cap="Mousse de chocolate"><img loading="lazy" src="media/mousse.jpg" alt="Copa de mousse de chocolate con crema"><span>Mousse de chocolate</span></button>
+          <button class="shot zoom" type="button" data-group="galeria" data-cat="tortas" data-full="media/torta-durazno.jpg" data-cap="Torta decorada"><img loading="lazy" src="media/torta-durazno.jpg" alt="Torta con rosetas, durazno y hilos de chocolate"><span>Torta decorada</span></button>
+          <button class="shot zoom" type="button" data-group="galeria" data-cat="postres eventos" data-full="media/brownie-bocados.jpg" data-cap="Cuadraditos para la mesa"><img loading="lazy" src="media/brownie-bocados.jpg" alt="Cuadraditos de brownie con crema y dulce"><span>Cuadraditos</span></button>
+          <button class="shot zoom" type="button" data-group="galeria" data-cat="donitas" data-full="media/donas-rejilla.jpg" data-cap="Donas recién glaseadas"><img loading="lazy" src="media/donas-rejilla.jpg" alt="Donas de distintos glaseados sobre una rejilla"><span>Recién glaseadas</span></button>
+          <button class="shot zoom" type="button" data-group="galeria" data-cat="postres" data-full="media/vasitos-limon.jpg" data-cap="Vasitos de limón"><img loading="lazy" src="media/vasitos-limon.jpg" alt="Vasitos de limón con merengue"><span>Vasitos de limón</span></button>
+          <button class="shot zoom" type="button" data-group="galeria" data-cat="tortas" data-full="media/torta-chocolate.jpg" data-cap="Torta de chocolate"><img loading="lazy" src="media/torta-chocolate.jpg" alt="Torta rectangular de chocolate"><span>Torta de chocolate</span></button>
+          <button class="shot zoom" type="button" data-group="galeria" data-cat="postres" data-full="media/vasitos-corazon.jpg" data-cap="Vasitos con corazón"><img loading="lazy" src="media/vasitos-corazon.jpg" alt="Vasitos con corazón de chocolate"><span>Corazones de chocolate</span></button>
+          <button class="shot zoom" type="button" data-group="galeria" data-cat="postres eventos" data-full="media/vasitos-durazno.jpg" data-cap="Vasitos de durazno"><img loading="lazy" src="media/vasitos-durazno.jpg" alt="Vasitos con crema y durazno"><span>Vasitos de durazno</span></button>
+          <button class="shot zoom" type="button" data-group="galeria" data-cat="postres" data-full="media/brownie-merengue.jpg" data-cap="Brownie con merengue"><img loading="lazy" src="media/brownie-merengue.jpg" alt="Brownies con merengue tostado"><span>Brownie con merengue</span></button>
+          <button class="shot zoom" type="button" data-group="galeria" data-cat="postres cupcakes" data-full="media/alfajores.jpg" data-cap="Alfajores decorados"><img loading="lazy" src="media/alfajores.jpg" alt="Alfajores con grana de colores"><span>Alfajores</span></button>
+          <button class="shot zoom" type="button" data-group="galeria" data-cat="postres" data-full="media/rolls.jpg" data-cap="Espirales caseros"><img loading="lazy" src="media/rolls.jpg" alt="Espirales de masa recién horneados"><span>Espirales caseros</span></button>
+          <button class="shot zoom" type="button" data-group="galeria" data-cat="postres" data-full="media/brownie-cuadrado.jpg" data-cap="Brownie con chocolate"><img loading="lazy" src="media/brownie-cuadrado.jpg" alt="Cuadrado de brownie con hilos de chocolate"><span>Brownie</span></button>
+          <button class="shot zoom" type="button" data-group="galeria" data-cat="postres eventos" data-full="media/vasitos-bandeja.jpg" data-cap="Bandeja de vasitos"><img loading="lazy" src="media/vasitos-bandeja.jpg" alt="Bandeja de vasitos dulces para un evento"><span>Bandeja de vasitos</span></button>
+          <button class="shot zoom" type="button" data-group="galeria" data-cat="cupcakes" data-full="media/cupcake.jpg" data-cap="Cupcake decorado"><img loading="lazy" src="media/cupcake.jpg" alt="Cupcake con crema y galleta"><span>Cupcake</span></button>
+          <button class="shot zoom" type="button" data-group="galeria" data-cat="postres" data-full="media/brownie-hilos.jpg" data-cap="Brownie bañado"><img loading="lazy" src="media/brownie-hilos.jpg" alt="Brownie bañado en chocolate"><span>Brownie bañado</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonios" style="padding-top:1rem">
+      <div class="wrap">
+        <p class="eyebrow">Testimonios</p>
+        <h2>Lo que se llevan de la mesa</h2>
+        <div class="quotes">
+          <figure class="quote">
+            <div class="stars" aria-label="5 estrellas">★★★★★</div>
+            <p>“Todo salió hermoso. Los invitados quedaron encantados.”</p>
+            <small>Celebración en la costa</small>
+          </figure>
+          <figure class="quote">
+            <div class="stars" aria-label="5 estrellas">★★★★★</div>
+            <p>“La mesa dulce fue el centro de atención del cumpleaños.”</p>
+            <small>Cumpleaños</small>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section zones" id="zona">
+      <div class="wrap">
+        <p class="eyebrow">Trabajamos en</p>
+        <h2>Partido de La Costa y alrededores</h2>
+        <p class="intro">Elaboramos en Mar de Ajó y llegamos con tortas, mesas dulces y donitas a estos lugares. Si tu festejo es cerca, escribinos y lo vemos.</p>
+        <ul class="towns">
+          <li>Mar de Ajó <span>Partido de La Costa</span></li>
+          <li>San Bernardo <span>Partido de La Costa</span></li>
+          <li>Costa Azul <span>Partido de La Costa</span></li>
+          <li>Lucila del Mar <span>Partido de La Costa</span></li>
+          <li>Aguas Verdes <span>Partido de La Costa</span></li>
+          <li>Costa del Este <span>Partido de La Costa</span></li>
+          <li>Pinamar <span>Costa atlántica</span></li>
+          <li>Villa Gesell <span>Costa atlántica</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="instagram">
+      <div class="wrap">
+        <p class="eyebrow">Instagram</p>
+        <h2>@merapasteleriacasera</h2>
+        <p class="intro">Ahí vas a ver lo último que sale de la cocina. Estas son algunas de las fotos de la casa: seguinos para no perderte las próximas.</p>
+        <div class="ig-grid">
+          <a href="https://www.instagram.com/merapasteleriacasera/" target="_blank" rel="noopener"><img loading="lazy" src="media/vasitos-cereza.jpg" alt="Postre en vaso de Mera"></a>
+          <a href="https://www.instagram.com/merapasteleriacasera/" target="_blank" rel="noopener"><img loading="lazy" src="media/torta-pokemon.jpg" alt="Torta temática de Mera"></a>
+          <a href="https://www.instagram.com/merapasteleriacasera/" target="_blank" rel="noopener"><img loading="lazy" src="media/donas-vuelo.jpg" alt="Donitas de Mera"></a>
+          <a href="https://www.instagram.com/merapasteleriacasera/" target="_blank" rel="noopener"><img loading="lazy" src="media/mousse.jpg" alt="Mousse de Mera"></a>
+          <a href="https://www.instagram.com/merapasteleriacasera/" target="_blank" rel="noopener"><img loading="lazy" src="media/torta-malvavisco.jpg" alt="Torta de malvaviscos de Mera"></a>
+          <a href="https://www.instagram.com/merapasteleriacasera/" target="_blank" rel="noopener"><img loading="lazy" src="media/vasitos-limon.jpg" alt="Vasito de limón de Mera"></a>
+        </div>
+        <p style="margin-top:1.2rem"><a class="btn btn-choco" href="https://www.instagram.com/merapasteleriacasera/" target="_blank" rel="noopener">Seguir en Instagram</a></p>
+      </div>
+    </section>
+
+    <section class="section" id="contacto" style="padding-top:0">
+      <div class="wrap">
+        <p class="eyebrow">Contacto</p>
+        <h2>Contame tu evento</h2>
+        <p class="intro">Dejá el nombre, la fecha y qué se te ocurrió. Se abre WhatsApp con el mensaje listo para Rossana. No queda guardado en ningún lado.</p>
+        <div class="contact-grid">
+          <form id="pedido">
+            <div class="form-row">
+              <div>
+                <label for="nombre">Nombre</label>
+                <input id="nombre" name="nombre" required autocomplete="name" placeholder="Tu nombre">
+              </div>
+              <div>
+                <label for="telefono">Teléfono</label>
+                <input id="telefono" name="telefono" inputmode="tel" autocomplete="tel" placeholder="Opcional">
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="evento">Qué necesitás</label>
+                <select id="evento" name="evento">
+                  <option>Cumpleaños</option>
+                  <option>Casamiento</option>
+                  <option>Bautismo</option>
+                  <option>Baby shower</option>
+                  <option>Evento empresarial</option>
+                  <option>Reunión familiar</option>
+                  <option>Donitas</option>
+                  <option>Mesa dulce</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+              <div>
+                <label for="fecha">Fecha</label>
+                <input id="fecha" name="fecha" type="date">
+              </div>
+            </div>
+            <label for="localidad">Localidad</label>
+            <select id="localidad" name="localidad">
+              <option>Mar de Ajó</option>
+              <option>San Bernardo</option>
+              <option>Costa Azul</option>
+              <option>Lucila del Mar</option>
+              <option>Aguas Verdes</option>
+              <option>Costa del Este</option>
+              <option>Pinamar</option>
+              <option>Villa Gesell</option>
+              <option>Otra localidad</option>
+            </select>
+            <label for="mensaje">Contame un poco</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Cantidad de personas, temática, sabores..."></textarea>
+            <p style="margin-top:1rem"><button class="btn btn-wa btn-lg" type="submit">Enviar por WhatsApp</button></p>
+            <p class="hint">También podés llamar al <a href="tel:+541157079446">011 5707-9446</a>.</p>
+          </form>
+          <aside class="info-card">
+            <h3>Hablemos</h3>
+            <p class="who"><strong>Rossana Margagliotti</strong>Mera Pastelería Casera<br>Mar de Ajó, Partido de La Costa</p>
+            <div class="channels">
+              <a class="btn btn-wa" href="https://wa.me/541157079446?text=Hola%20Rossana.%20Vi%20la%20p%C3%A1gina%20de%20Mera%20Pasteler%C3%ADa%20Casera%20y%20quisiera%20solicitar%20un%20presupuesto.">WhatsApp 011 5707-9446</a>
+              <a class="btn btn-call" href="tel:+541157079446">Llamar</a>
+              <a class="btn btn-ig" href="https://www.instagram.com/merapasteleriacasera/" target="_blank" rel="noopener">@merapasteleriacasera</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="finale" id="pedir">
+      <img class="bg" src="media/torta-malvavisco.jpg" alt="">
+      <div class="veil"></div>
+      <div class="content">
+        <p class="eyebrow" style="color:#F8D9D9">Mera Pastelería Casera</p>
+        <h2>¿Listo para sorprender a tus invitados?</h2>
+        <p>Creamos experiencias dulces para cada ocasión. Cada torta cuenta una historia, cada evento merece algo único.</p>
+        <a class="btn btn-wa btn-lg" href="https://wa.me/541157079446?text=Hola%20Rossana.%20Vi%20la%20p%C3%A1gina%20de%20Mera%20Pasteler%C3%ADa%20Casera%20y%20quisiera%20solicitar%20un%20presupuesto.">Pedir presupuesto por WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot">
+      <img src="media/logo.jpg" alt="Mera Pastelería Casera">
+      <p>Pastelería casera desde 2010 · Mar de Ajó<br>Rossana Margagliotti</p>
+      <p><a href="tel:+541157079446">011 5707-9446</a><br><a href="https://www.instagram.com/merapasteleriacasera/" target="_blank" rel="noopener">Instagram</a></p>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/541157079446?text=Hola%20Rossana.%20Vi%20la%20p%C3%A1gina%20de%20Mera%20Pasteler%C3%ADa%20Casera%20y%20quisiera%20solicitar%20un%20presupuesto." aria-label="Pedir presupuesto por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 2.1 16.7L1 23l6.5-1.1A11 11 0 0 0 20.5 3.5zm-8.5 17a9.1 9.1 0 0 1-4.6-1.3l-.3-.2-3.9.6.7-3.8-.2-.3A9.1 9.1 0 1 1 12 20.5zm5-6.8c-.3-.1-1.6-.8-1.8-.9s-.4-.1-.6.1-.7.9-.8 1-.3.2-.6.1a7.4 7.4 0 0 1-2.2-1.4 8.2 8.2 0 0 1-1.5-1.9c-.2-.3 0-.4.1-.6l.4-.5.2-.3a.5.5 0 0 0 0-.5c0-.1-.6-1.4-.8-1.9s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.8 11.8 0 0 0 4.5 4 15 15 0 0 0 1.5.5 3.6 3.6 0 0 0 1.7.1 2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.6-.3z"/></svg>
+    WhatsApp
+  </a>
+
+  <div class="dock">
+    <a class="btn btn-ghost" href="tel:+541157079446">Llamar</a>
+    <a class="btn btn-wa" href="https://wa.me/541157079446?text=Hola%20Rossana.%20Vi%20la%20p%C3%A1gina%20de%20Mera%20Pasteler%C3%ADa%20Casera%20y%20quisiera%20solicitar%20un%20presupuesto.">WhatsApp</a>
+  </div>
+
+  <div class="lightbox" hidden>
+    <div class="lb-backdrop" data-close></div>
+    <button class="lb-x" type="button" data-close aria-label="Cerrar">×</button>
+    <button class="lb-nav prev" type="button" aria-label="Anterior">‹</button>
+    <figure>
+      <img alt="">
+      <figcaption class="lb-cap"></figcaption>
+    </figure>
+    <button class="lb-nav next" type="button" aria-label="Siguiente">›</button>
+  </div>
+
+  <script>
+    const header = document.querySelector(".header");
+    const toggle = document.querySelector(".nav-toggle");
+    const menu = document.querySelector(".nav-links");
+    toggle.addEventListener("click", () => {
+      const open = menu.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(open));
+    });
+    menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => {
+      menu.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+    }));
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("scrolled", window.scrollY > 8);
+    }, { passive: true });
+
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const heroImg = document.querySelector(".hero-photo .main");
+    const finaleImg = document.querySelector(".finale img.bg");
+    if (!reduce) {
+      window.addEventListener("scroll", () => {
+        const y = window.scrollY;
+        if (y < window.innerHeight * 1.2) heroImg.style.transform = "scale(1.08) translateY(" + (y * 0.18) + "px)";
+        const rect = finaleImg.parentElement.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          finaleImg.style.transform = "translateY(" + (rect.top * -0.12) + "px)";
+        }
+      }, { passive: true });
+    }
+
+    document.querySelectorAll(".filters button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const filter = btn.dataset.filter;
+        document.querySelectorAll(".filters button").forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
+        document.querySelectorAll(".shot").forEach((shot) => {
+          const cats = shot.dataset.cat.split(" ");
+          shot.classList.toggle("gone", filter !== "todas" && !cats.includes(filter));
+        });
+      });
+    });
+
+    const lb = document.querySelector(".lightbox");
+    const lbImg = lb.querySelector("img");
+    const lbCap = lb.querySelector(".lb-cap");
+    let group = [];
+    let index = 0;
+    function show() {
+      const el = group[index];
+      lbImg.src = el.dataset.full;
+      lbImg.alt = el.dataset.cap || "";
+      lbCap.textContent = el.dataset.cap || "";
+    }
+    function openAt(items, i) {
+      group = items;
+      index = i;
+      show();
+      lb.hidden = false;
+      document.body.classList.add("lock");
+    }
+    function step(dir) {
+      if (!group.length) return;
+      index = (index + dir + group.length) % group.length;
+      show();
+    }
+    document.body.addEventListener("click", (e) => {
+      const zoom = e.target.closest(".zoom");
+      if (!zoom) return;
+      const name = zoom.dataset.group || "galeria";
+      const items = [...document.querySelectorAll('.zoom[data-group="' + name + '"]')].filter((n) => !n.classList.contains("gone"));
+      openAt(items, Math.max(0, items.indexOf(zoom)));
+    });
+    lb.addEventListener("click", (e) => {
+      if (e.target.closest("[data-close]")) {
+        lb.hidden = true;
+        document.body.classList.remove("lock");
+      }
+      if (e.target.closest(".prev")) step(-1);
+      if (e.target.closest(".next")) step(1);
+    });
+    document.addEventListener("keydown", (e) => {
+      if (lb.hidden) return;
+      if (e.key === "Escape") { lb.hidden = true; document.body.classList.remove("lock"); }
+      if (e.key === "ArrowRight") step(1);
+      if (e.key === "ArrowLeft") step(-1);
+    });
+    let touchX = 0;
+    lb.addEventListener("touchstart", (e) => { touchX = e.changedTouches[0].clientX; }, { passive: true });
+    lb.addEventListener("touchend", (e) => {
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 48) step(dx < 0 ? 1 : -1);
+    });
+
+    document.getElementById("pedido").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = new FormData(e.target);
+      const lines = [
+        "Hola Rossana. Vi la página de Mera Pastelería Casera y quisiera solicitar un presupuesto.",
+        "",
+        "Nombre: " + data.get("nombre"),
+        "Teléfono: " + (data.get("telefono") || "no indicado"),
+        "Pedido: " + data.get("evento"),
+        "Fecha: " + (data.get("fecha") || "a confirmar"),
+        "Localidad: " + data.get("localidad"),
+        "Mensaje: " + (data.get("mensaje") || "-")
+      ];
+      window.open("https://wa.me/541157079446?text=" + encodeURIComponent(lines.join("\n")), "_blank", "noopener");
+    });
+  </script>
+</body>
+</html>
