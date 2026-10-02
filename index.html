@@ -153,6 +153,13 @@
     .btn-wa:hover { background: #178a47; }
     .btn-ghost { background: transparent; color: var(--choco); border: 1.5px solid rgba(90,58,46,.28); }
     .btn-ghost:hover { background: white; }
+    .btn-ig {
+      background: #F6C5D0;
+      color: #5A3A2E;
+      box-shadow: 0 10px 22px rgba(196, 92, 112, .18);
+    }
+    .btn-ig:hover { background: #F0B0BF; }
+    .btn-ig svg { width: 18px; height: 18px; color: #C13584; }
     .btn-choco { background: var(--choco); color: var(--cream); }
     .btn-lg { min-height: 60px; padding: 1rem 1.6rem; font-size: 1.05rem; }
     .header .btn { min-height: 46px; padding: .7rem 1rem; }
@@ -265,23 +272,6 @@
       color: var(--choco);
       font-size: .95rem;
     }
-    .since {
-      position: absolute;
-      right: 22px;
-      top: 22px;
-      background: rgba(248, 243, 234, .92);
-      color: var(--choco);
-      border-radius: 18px;
-      padding: .8rem 1rem;
-      box-shadow: var(--shadow);
-    }
-    .since strong {
-      display: block;
-      font-family: var(--display);
-      font-size: 1.7rem;
-      line-height: 1;
-    }
-    .since small { color: var(--muted); }
 
     .marquee {
       overflow: hidden;
@@ -730,10 +720,26 @@
       .nav-links a { padding: .75rem .2rem; }
       .header .btn { width: 100%; }
       .hero, .about, .story-grid, .contact-grid, .quotes, .carta, .donitas-head { grid-template-columns: 1fr; }
+      .hero { min-height: 0; }
+      .hero-copy { padding: 1rem 5vw 1.1rem; }
+      .hero-logo { height: 108px; margin-bottom: .45rem; }
+      .eyebrow { margin-bottom: .4rem; }
+      h1 { font-size: 2rem; margin-bottom: .35rem; }
+      .lede { font-size: .98rem; margin-bottom: .6rem; }
+      .lede em { font-size: 1.08rem; }
+      .occasions { gap: .35rem; margin-bottom: .7rem; }
+      .occasions li { font-size: .78rem; padding: .22rem .55rem; }
+      .hero-actions { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+      .hero-actions .btn { width: 100%; min-height: 48px; padding: .6rem .7rem; font-size: .92rem; }
       .hero-photo { min-height: 0; }
       .hero-photo::before { display: none; }
-      .hero-photo .main { position: relative; height: auto; max-height: 78vh; }
-      .polaroid { left: 16px; bottom: 16px; }
+      .hero-photo .main { position: relative; height: auto; max-height: 42vh; }
+      .polaroid { left: 12px; bottom: 12px; width: 112px; padding: 6px 6px 20px; }
+      .polaroid img { height: 72px; }
+      .polaroid span { font-size: .72rem; bottom: 3px; }
+      .section { padding: 2.8rem 0; }
+      .section h2 { font-size: 2rem; }
+      .intro { margin-bottom: 1.1rem; }
       .stack { height: 420px; }
       .video-duo, .donut-row, .posters, .cards { grid-template-columns: 1fr 1fr; }
       .ig-grid { grid-template-columns: 1fr 1fr; }
@@ -755,10 +761,14 @@
     @media (max-width: 680px) {
       .cards, .video-duo, .donut-row, .posters, .quotes, .form-row, .carta { grid-template-columns: 1fr; }
       .gallery { columns: 2 140px; }
-      .posters img, .carta-frame img, .donut-row img { height: 320px; }
-      h1 { max-width: none; }
-      .hero-copy { padding: 1.6rem 5vw 2.2rem; }
-      .since { right: 12px; top: 12px; }
+      .posters img, .carta-frame img, .donut-row img { height: 210px; }
+      .carta-frame img { height: 240px; }
+      h1 { max-width: none; font-size: 1.85rem; }
+      .hero-logo { height: 96px; }
+      .stack { height: 260px; }
+      .card img { height: 150px; }
+      .ig-grid img { height: 132px; }
+      .marquee { padding: .5rem 0; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -803,12 +813,14 @@
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 2.1 16.7L1 23l6.5-1.1A11 11 0 0 0 20.5 3.5zm-8.5 17a9.1 9.1 0 0 1-4.6-1.3l-.3-.2-3.9.6.7-3.8-.2-.3A9.1 9.1 0 1 1 12 20.5zm5-6.8c-.3-.1-1.6-.8-1.8-.9s-.4-.1-.6.1-.7.9-.8 1-.3.2-.6.1a7.4 7.4 0 0 1-2.2-1.4 8.2 8.2 0 0 1-1.5-1.9c-.2-.3 0-.4.1-.6l.4-.5.2-.3a.5.5 0 0 0 0-.5c0-.1-.6-1.4-.8-1.9s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.8 11.8 0 0 0 4.5 4 15 15 0 0 0 1.5.5 3.6 3.6 0 0 0 1.7.1 2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.6-.3z"/></svg>
             Pedir presupuesto
           </a>
-          <a class="btn btn-ghost" href="https://www.instagram.com/merapasteleriacasera/" target="_blank" rel="noopener">Ver Instagram</a>
+          <a class="btn btn-ig btn-lg" href="https://www.instagram.com/merapasteleriacasera/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.05" fill="currentColor"/></svg>
+            Ver Instagram
+          </a>
         </div>
       </div>
       <div class="hero-photo">
         <img class="main" src="media/torta-durazno.jpg" alt="Torta decorada con rosetas, durazno y chocolate">
-        <div class="since"><strong>2010</strong><small>Pastelería casera</small></div>
         <figure class="polaroid">
           <img src="media/donas-vuelo.jpg" alt="Mini donitas artesanales con toppings de colores">
           <span>Donitas frescas</span>
