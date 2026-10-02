@@ -183,13 +183,19 @@
     .btn-wa:hover { background: #178a47; }
     .btn-ghost { background: transparent; color: var(--choco); border: 1.5px solid rgba(90,58,46,.28); }
     .btn-ghost:hover { background: white; }
-    .btn-ig {
-      background: #F6C5D0;
-      color: #5A3A2E;
-      box-shadow: 0 10px 22px rgba(196, 92, 112, .18);
+    .btn-sage {
+      background: var(--sage-deep);
+      color: var(--cream);
+      box-shadow: 0 12px 26px rgba(95, 122, 76, .28);
     }
-    .btn-ig:hover { background: #F0B0BF; }
-    .btn-ig svg { width: 18px; height: 18px; color: #C13584; }
+    .btn-sage:hover { background: #4d663c; }
+    .btn-ig {
+      background: var(--blush);
+      color: var(--choco);
+      box-shadow: 0 10px 22px rgba(90, 58, 46, .1);
+    }
+    .btn-ig:hover { background: var(--blush-2); }
+    .btn-ig svg { width: 18px; height: 18px; color: var(--choco); }
     .btn-choco { background: var(--choco); color: var(--cream); }
     .btn-invite {
       background: var(--cream);
@@ -786,7 +792,7 @@
       .occasions { gap: .35rem; margin-bottom: .7rem; }
       .occasions li { font-size: .78rem; padding: .22rem .55rem; }
       .hero-actions { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
-      .hero-actions .btn { width: 100%; min-height: 48px; padding: .6rem .7rem; font-size: .92rem; }
+      .hero-actions .btn { width: 100%; min-width: 0; min-height: 48px; padding: .6rem .7rem; font-size: .92rem; line-height: 1.2; white-space: normal; text-align: center; }
       .hero-photo { min-height: 0; }
       .hero-photo::before { display: none; }
       .hero-photo .main { position: relative; height: auto; max-height: 42vh; }
@@ -863,7 +869,7 @@
       <a href="#servicios">Servicios</a>
       <a href="#galeria">Galería</a>
       <a href="#contacto">Contacto</a>
-      <a class="btn btn-wa" href="https://wa.me/541157079446?text=Hola%20Rossana.%20Vi%20la%20p%C3%A1gina%20de%20Mera%20Pasteler%C3%ADa%20Casera%20y%20quisiera%20solicitar%20un%20presupuesto.">Pedir presupuesto</a>
+      <a class="btn btn-sage" href="https://wa.me/541157079446?text=Hola%20Rossana.%20Vi%20la%20p%C3%A1gina%20de%20Mera%20Pasteler%C3%ADa%20Casera%20y%20quisiera%20consultar%20para%20un%20evento.">Consultá para tu evento</a>
     </nav>
   </header>
 
@@ -883,10 +889,7 @@
           <li>Reuniones familiares</li>
         </ul>
         <div class="hero-actions reveal">
-          <a class="btn btn-wa btn-lg" href="https://wa.me/541157079446?text=Hola%20Rossana.%20Vi%20la%20p%C3%A1gina%20de%20Mera%20Pasteler%C3%ADa%20Casera%20y%20quisiera%20solicitar%20un%20presupuesto.">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 2.1 16.7L1 23l6.5-1.1A11 11 0 0 0 20.5 3.5zm-8.5 17a9.1 9.1 0 0 1-4.6-1.3l-.3-.2-3.9.6.7-3.8-.2-.3A9.1 9.1 0 1 1 12 20.5zm5-6.8c-.3-.1-1.6-.8-1.8-.9s-.4-.1-.6.1-.7.9-.8 1-.3.2-.6.1a7.4 7.4 0 0 1-2.2-1.4 8.2 8.2 0 0 1-1.5-1.9c-.2-.3 0-.4.1-.6l.4-.5.2-.3a.5.5 0 0 0 0-.5c0-.1-.6-1.4-.8-1.9s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.8 11.8 0 0 0 4.5 4 15 15 0 0 0 1.5.5 3.6 3.6 0 0 0 1.7.1 2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.6-.3z"/></svg>
-            Pedir presupuesto
-          </a>
+          <a class="btn btn-sage btn-lg" href="https://wa.me/541157079446?text=Hola%20Rossana.%20Vi%20la%20p%C3%A1gina%20de%20Mera%20Pasteler%C3%ADa%20Casera%20y%20quisiera%20consultar%20para%20un%20evento.">Consultá para tu evento</a>
           <a class="btn btn-ig btn-lg" href="https://www.instagram.com/merapasteleriacasera/" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.05" fill="currentColor"/></svg>
             Ver Instagram
