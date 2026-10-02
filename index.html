@@ -7,28 +7,29 @@
     if ("scrollRestoration" in history) history.scrollRestoration = "manual";
     (function () {
       var moved = false;
+      document.documentElement.style.scrollBehavior = "auto";
       function mark() { moved = true; }
       addEventListener("pointerdown", mark, { once: true, passive: true });
       addEventListener("keydown", mark, { once: true });
       addEventListener("wheel", mark, { once: true, passive: true });
       function alInicio() {
-        if (location.hash || moved) return;
-        var root = document.documentElement;
-        var prev = root.style.scrollBehavior;
-        root.style.scrollBehavior = "auto";
+        if (moved) return;
+        if (location.hash) history.replaceState(null, "", location.pathname + location.search);
         scrollTo(0, 0);
-        root.style.scrollBehavior = prev;
       }
       alInicio();
       addEventListener("pageshow", alInicio);
-      addEventListener("load", alInicio);
+      addEventListener("load", function () {
+        alInicio();
+        setTimeout(function () {
+          alInicio();
+          if (!moved) document.documentElement.style.scrollBehavior = "";
+        }, 60);
+      });
       addEventListener("pagehide", function () {
-        if (location.hash) return;
-        var root = document.documentElement;
-        var prev = root.style.scrollBehavior;
-        root.style.scrollBehavior = "auto";
+        document.documentElement.style.scrollBehavior = "auto";
+        if (location.hash) history.replaceState(null, "", location.pathname + location.search);
         scrollTo(0, 0);
-        root.style.scrollBehavior = prev;
       });
     })();
   </script>
@@ -1052,8 +1053,7 @@
 
     <section class="section" id="galeria" style="padding-top:0">
       <div class="wrap">
-        <p class="eyebrow">Galería</p>
-        <h2>Lo que sale de la cocina</h2>
+        <h2>Galería</h2>
         <p class="intro">Fotos reales de tortas, donitas, postres y mesas. Elegí una categoría y se ven acá mismo.</p>
         <div class="filters" role="toolbar" aria-label="Filtrar galería">
           <button type="button" data-filter="tortas" aria-pressed="true">Tortas</button>
