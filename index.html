@@ -354,7 +354,13 @@
       align-items: center;
       gap: 1.1rem;
     }
-    .story h2 { color: #F8F3EA; margin: 0; }
+    .story h2 {
+      color: #F8F3EA;
+      margin: 0;
+      max-width: 16em;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      line-height: 1.15;
+    }
     .video-frame {
       background: #140e0c;
       border-radius: 22px;
@@ -912,9 +918,9 @@
 
     <section class="story" id="historia">
       <div class="story-grid">
-        <h2>Nuestra historia</h2>
+        <h2>Trabajamos en cada detalle para que tu evento sea inolvidable</h2>
         <div class="video-frame">
-          <video controls playsinline preload="metadata" poster="media/poster-historia.jpg" title="Nuestra historia">
+          <video controls playsinline preload="metadata" poster="media/poster-historia.jpg" title="Trabajamos en cada detalle para que tu evento sea inolvidable">
             <source src="media/video-historia.mp4" type="video/mp4">
           </video>
         </div>
