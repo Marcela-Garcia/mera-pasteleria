@@ -417,24 +417,6 @@
     .video-duo .video-frame video { width: 100%; height: 100%; max-height: 520px; object-fit: cover; }
     .video-duo .tall video { max-height: 520px; object-fit: cover; }
     .video-note { margin: .35rem 0 0; font-size: .85rem; color: var(--muted); }
-    .after-videos {
-      display: block;
-      width: 100%;
-      margin: 1rem 0 0;
-      padding: 0;
-      border: 0;
-      border-radius: 22px;
-      overflow: hidden;
-      cursor: zoom-in;
-      background: transparent;
-    }
-    .after-videos img {
-      width: 100%;
-      height: min(460px, 52vw);
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
     .donut-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -854,7 +836,6 @@
       #testimonios h2 { font-size: 1.5rem; margin-bottom: .4rem; }
       .quote { width: 232px; padding: .5rem .7rem .45rem; }
       .quote p { font-size: .92rem; }
-      .after-videos img { height: 190px; }
       .zones { padding-top: 1.6rem; padding-bottom: 1.6rem; }
       .zones h2 { font-size: 1.55rem; margin-bottom: .35rem; }
       .zones .intro { font-size: .9rem; margin-bottom: .55rem; }
@@ -1018,10 +999,6 @@
             <p class="video-note">Mirá la caja de donitas surtidas.</p>
           </div>
         </div>
-
-        <button class="after-videos zoom" type="button" data-group="donitas" data-full="media/cocina-donitas.jpg" data-cap="Así salen las donitas">
-          <img src="media/cocina-donitas.jpg" alt="Máquina de mini donas junto a los glaseados de chocolate, frutilla, limón y vainilla">
-        </button>
 
         <div class="donut-row">
           <button class="zoom" type="button" data-group="donitas" data-full="media/donas-rejilla.jpg" data-cap="Donas recién glaseadas">
@@ -1237,7 +1214,6 @@
       <div class="wrap">
         <p class="eyebrow">Contacto</p>
         <h2>Contame tu evento</h2>
-        <p class="intro">Dejá el nombre, la fecha y qué se te ocurrió. Se abre WhatsApp con el mensaje listo para Rossana. No queda guardado en ningún lado.</p>
         <div class="contact-grid">
           <form id="pedido">
             <div class="form-row">
