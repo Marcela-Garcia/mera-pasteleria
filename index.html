@@ -412,6 +412,24 @@
     .video-duo .video-frame video { width: 100%; height: 100%; max-height: 520px; object-fit: cover; }
     .video-duo .tall video { max-height: 520px; object-fit: cover; }
     .video-note { margin: .35rem 0 0; font-size: .85rem; color: var(--muted); }
+    .after-videos {
+      display: block;
+      width: 100%;
+      margin: 1rem 0 0;
+      padding: 0;
+      border: 0;
+      border-radius: 22px;
+      overflow: hidden;
+      cursor: zoom-in;
+      background: transparent;
+    }
+    .after-videos img {
+      width: 100%;
+      height: min(460px, 52vw);
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
     .donut-row {
       display: grid;
       grid-template-columns: 1.2fr .8fr .8fr;
@@ -503,13 +521,25 @@
     }
     .shot:hover span, .shot:focus-visible span { opacity: 1; }
 
-    .quotes { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; }
-    .quote {
-      background: white;
-      border-radius: 16px;
-      padding: .75rem .9rem .7rem;
-      border: 1px solid rgba(90,58,46,.06);
+    .quote-marquee { overflow: hidden; margin-top: .2rem; }
+    .quote-track {
+      display: flex;
+      gap: .7rem;
+      width: max-content;
+      animation: ticker 36s linear infinite;
     }
+    .quote-marquee:hover .quote-track { animation-play-state: paused; }
+    .quote {
+      flex: none;
+      width: 280px;
+      margin: 0;
+      background: #F8E4DE;
+      border-radius: 16px;
+      padding: .65rem .85rem .6rem;
+      border: 1px solid rgba(232, 176, 168, .55);
+    }
+    #testimonios { padding: 2.4rem 0 1.5rem; }
+    #testimonios h2 { margin-bottom: .7rem; }
     .stars { color: #C9892D; letter-spacing: .08em; margin-bottom: .2rem; font-size: .8rem; }
     .quote p {
       font-family: var(--display);
@@ -815,6 +845,11 @@
       .ig-grid { grid-template-columns: 1fr 1fr; }
       .donitas-head { justify-items: start; }
       .wa-float { right: 14px; bottom: 14px; padding: .7rem .85rem .7rem .7rem; }
+      #testimonios { padding: .7rem 0 .5rem; }
+      #testimonios h2 { font-size: 1.5rem; margin-bottom: .4rem; }
+      .quote { width: 232px; padding: .5rem .7rem .45rem; }
+      .quote p { font-size: .92rem; }
+      .after-videos img { height: 190px; }
       .zones { padding-top: 1.6rem; padding-bottom: 1.6rem; }
       .zones h2 { font-size: 1.55rem; margin-bottom: .35rem; }
       .zones .intro { font-size: .9rem; margin-bottom: .55rem; }
@@ -979,6 +1014,10 @@
           </div>
         </div>
 
+        <button class="after-videos zoom" type="button" data-group="donitas" data-full="media/cocina-donitas.jpg" data-cap="Así salen las donitas">
+          <img src="media/cocina-donitas.jpg" alt="Máquina de mini donas junto a los glaseados de chocolate, frutilla, limón y vainilla">
+        </button>
+
         <div class="donut-row">
           <button class="zoom" type="button" data-group="donitas" data-full="media/donas-rejilla.jpg" data-cap="Donas recién glaseadas">
             <img src="media/donas-rejilla.jpg" alt="Bandeja de donas glaseadas de colores">
@@ -1106,11 +1145,13 @@
       </div>
     </section>
 
-    <section class="section" id="testimonios" style="padding-top:1rem">
+    <section class="section" id="testimonios">
       <div class="wrap">
         <p class="eyebrow">Testimonios</p>
         <h2>Lo que se llevan de la mesa</h2>
-        <div class="quotes">
+      </div>
+      <div class="quote-marquee" aria-label="Testimonios">
+        <div class="quote-track">
           <figure class="quote">
             <div class="stars" aria-label="5 estrellas">★★★★★</div>
             <p>“Todo salió hermoso. Los invitados quedaron encantados.”</p>
@@ -1120,6 +1161,36 @@
             <div class="stars" aria-label="5 estrellas">★★★★★</div>
             <p>“La mesa dulce fue el centro de atención del cumpleaños.”</p>
             <small>Cumpleaños</small>
+          </figure>
+          <figure class="quote">
+            <div class="stars" aria-label="5 estrellas">★★★★★</div>
+            <p>“Las donitas desaparecieron enseguida. Frescas y riquísimas.”</p>
+            <small>Donitas</small>
+          </figure>
+          <figure class="quote">
+            <div class="stars" aria-label="5 estrellas">★★★★★</div>
+            <p>“Llegó todo fresco, lindo y a tiempo.”</p>
+            <small>Mar de Ajó</small>
+          </figure>
+          <figure class="quote">
+            <div class="stars" aria-label="5 estrellas">★★★★★</div>
+            <p>“Todo salió hermoso. Los invitados quedaron encantados.”</p>
+            <small>Celebración en la costa</small>
+          </figure>
+          <figure class="quote">
+            <div class="stars" aria-label="5 estrellas">★★★★★</div>
+            <p>“La mesa dulce fue el centro de atención del cumpleaños.”</p>
+            <small>Cumpleaños</small>
+          </figure>
+          <figure class="quote">
+            <div class="stars" aria-label="5 estrellas">★★★★★</div>
+            <p>“Las donitas desaparecieron enseguida. Frescas y riquísimas.”</p>
+            <small>Donitas</small>
+          </figure>
+          <figure class="quote">
+            <div class="stars" aria-label="5 estrellas">★★★★★</div>
+            <p>“Llegó todo fresco, lindo y a tiempo.”</p>
+            <small>Mar de Ajó</small>
           </figure>
         </div>
       </div>
@@ -1303,7 +1374,7 @@
         "#galeria .filters button",
         "#testimonios .eyebrow",
         "#testimonios h2",
-        "#testimonios .quote",
+        "#testimonios .quote-marquee",
         "#zona .eyebrow",
         "#zona h2",
         "#zona .intro",
